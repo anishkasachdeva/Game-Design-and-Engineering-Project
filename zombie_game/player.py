@@ -1,6 +1,7 @@
 from os import path
 from random import randint, choice, uniform
 
+import time
 from zombie_game.bullet import Bullet
 from zombie_game.functions import collide_with_object
 from zombie_game.settings import *
@@ -54,12 +55,28 @@ class Player(pg.sprite.Sprite):
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT] or keys[pg.K_a]:
             self.rotation_speed = PLAYER_ROTATION_SPEED
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
         if keys[pg.K_RIGHT] or keys[pg.K_d]:
             self.rotation_speed = - PLAYER_ROTATION_SPEED
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
         if keys[pg.K_UP] or keys[pg.K_w]:
             self.vel = vector(self.speed, 0).rotate(-self.rotation)
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
         if keys[pg.K_DOWN] or keys[pg.K_s]:
             self.vel = vector(-self.speed, 0).rotate(-self.rotation)
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
         if keys[pg.K_SPACE]:
             if self.weapon is not None:
                 if self.ammo[self.weapon] > 0:
