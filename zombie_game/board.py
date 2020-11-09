@@ -5,7 +5,7 @@ class Board:
 
     def __init__(self, width: int, height: int):
         self.surface = pg.display.set_mode((width, height), 0, 32)
-        pg.display.set_caption('Zombie in CLab')
+        pg.display.set_caption('The Curse Of Aegis')
         self.width = width
         self.height = height
         self.intro_bg = pg.image.load("images/intro1.jpg")
@@ -20,7 +20,7 @@ class Board:
     def draw_menu(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        self.draw_text(self.surface, "Zombie in CLab", self.width / 2, self.height * 0.3, self.title_font)
+        self.draw_text(self.surface, "The Curse Of Aegis", self.width / 2, self.height * 0.3, self.title_font)
         self.draw_text(self.surface, "Play", self.width / 2, self.height * 0.6, self.menu_font)
         self.draw_text(self.surface, "Ranking", self.width / 2, self.height * 0.7, self.menu_font)
         self.draw_text(self.surface, "Options", self.width / 2, self.height * 0.8, self.menu_font)
