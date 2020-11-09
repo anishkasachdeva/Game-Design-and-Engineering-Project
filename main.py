@@ -1,5 +1,6 @@
 from os import path
 from random import choice, random
+from pygame import mixer
 
 from zombie_game.board import Board
 from zombie_game.functions import quit_game, collide_hit_rect, draw_player_health, get_hit
@@ -451,5 +452,9 @@ class Game:
 
 
 if __name__ == "__main__":
+    # mixer.init()
+    # mixer.music.load("music.mp3")
+    # mixer.music.set_volume(0.7)
+    # mixer.music.play() 
     game = Game()
     game.menu.game_intro()
