@@ -34,7 +34,7 @@ PLAYER_IMAGE_NAKED1 = 'hold1.png'
 PLAYER_IMAGE_NAKED2 = 'hold2.png'
 PLAYER_IMAGE_PISTOL = 'gun.png'
 PLAYER_IMAGE_SHOTGUN = 'machine.png'
-PLAYER_IMAGE_UZI = 'silencer.png'
+PLAYER_IMAGE_UZI = 'gun.png'
 PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)
 LIVES_IMG = 'life_heart.png'
 
