@@ -1,6 +1,7 @@
 from os import path
 from random import choice, random
-from pygame import mixer
+# from pygame import mixer
+import pygame as pg
 
 from zombie_game.board import Board
 from zombie_game.functions import quit_game, collide_hit_rect, draw_player_health, get_hit
@@ -18,6 +19,9 @@ class Game:
     def __init__(self):
         pg.mixer.pre_init(44100, 16, 1, 2048)
         pg.init()
+        # pg.mixer.music.load("music.mp3")
+        # pg.mixer.music.set_volume(0.7)
+        # pg.mixer.music.play() 
         self.width = SCREEN_WIDTH
         self.height = SCREEN_HEIGHT
         self.board = Board(self.width, self.height)
@@ -452,9 +456,15 @@ class Game:
 
 
 if __name__ == "__main__":
+    pg.mixer.init() 
+    pg.mixer.music.load("scary1_halloween.wav") 
+    pg.mixer.music.set_volume(0.4)   
+    pg.mixer.music.play(-1) 
+    while True:
+        # pass
     # mixer.init()
     # mixer.music.load("music.mp3")
     # mixer.music.set_volume(0.7)
-    # mixer.music.play() 
-    game = Game()
-    game.menu.game_intro()
+    # mixer.music.play()
+        game = Game()
+        game.menu.game_intro()
