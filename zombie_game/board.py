@@ -38,6 +38,22 @@ class Board:
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
+    
+    def draw_scoreboard(self, *args):
+        self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
+        self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
+        self.draw_text(self.surface, "Scoreboard:", self.width / 2, self.height * 0.2, self.difficulty_font)
+        self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.35, self.options_font)
+        pos = 0.5
+        with open(SCOREBOARD) as f:
+            for line in f:
+                x = line.split()
+                self.draw_text(self.surface, x[0], self.width / 3, self.height * pos, self.bonus_font)
+                self.draw_text(self.surface, x[1], self.width * 2 / 3, self.height * pos, self.bonus_font)
+                pos +=0.08
+        for drawable in args:
+            drawable.draw_on(self.surface)
+        pg.display.update()
 
     def draw_choose_character(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))

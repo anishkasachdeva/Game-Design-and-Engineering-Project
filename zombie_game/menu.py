@@ -36,7 +36,7 @@ class Menu:
         if 335 < self.pos_y < 337:
             self.game_choose_character()
         elif 385 < self.pos_y < 397:
-            self.game_options()
+            self.game_scoreboard()
         elif 455 < self.pos_y < 457:
             self.game_options()
         else:
@@ -53,6 +53,12 @@ class Menu:
             # audio
         else:
             self.game_intro()
+    
+    def game_scoreboard(self):
+        self.i = 0.31
+        self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_scoreboard, self.game_intro)
+        if 185 < self.pos_y < 187:
+            self.game_intro() 
 
     def game_choose_character(self):
         self.i = 0.45
