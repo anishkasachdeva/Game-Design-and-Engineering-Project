@@ -241,6 +241,7 @@ class Game:
                     self.player.position = vector(self.player_start_pos[0], self.player_start_pos[1])
                     self.player.shield = PLAYER_SHIELD
                 else:
+                    self.update_scoreboard(self.player.total_accuracy)
                     self.playing = False
                     self.menu.game_over(self.score_list, 'GAME OVER')
         if hits:
