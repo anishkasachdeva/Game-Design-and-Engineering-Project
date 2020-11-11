@@ -48,13 +48,34 @@ class Menu:
         self.set_mob_limit(0.15, 196, 366, OPTIONS_SPRITE_POS_X, self.game.board.draw_options, self.game_intro)
         if 185 < self.pos_y < 187:
             # controls
-            pass
+            self.game_controls()
+            # pass
         elif 275 < self.pos_y < 277:
-            pass
-            # audio
+            # pass
+            self.audio_controls()
         else:
             self.game_intro()
+
+#-----------------------------------------------------------------------------------------------------------------------------------------
+    def game_controls(self):
+        self.i = 0.56
+        self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_options, 40)
+        # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_intro)
+        if 185 < self.pos_y < 187:
+            self.game_intro() 
+        elif 275 < self.pos_y < 277:
+            pass
     
+    def audio_controls(self):
+        self.i = 0.56
+        self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_options, 40)
+        # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_intro)
+        if 185 < self.pos_y < 187:
+            self.game_intro()
+        elif 275 < self.pos_y < 277:
+            pass
+#-----------------------------------------------------------------------------------------------------------------------------------------
+
     def game_scoreboard(self):
         self.i = 0.31
         self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_scoreboard, self.game_intro)
