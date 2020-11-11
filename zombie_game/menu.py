@@ -34,7 +34,8 @@ class Menu:
         self.i = 0.56
         self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
         if 335 < self.pos_y < 337:
-            self.game_choose_character()
+            self.game_choosing_difficulty()
+            # self.game_choose_character()
         elif 385 < self.pos_y < 397:
             self.game_scoreboard()
         elif 455 < self.pos_y < 457:
