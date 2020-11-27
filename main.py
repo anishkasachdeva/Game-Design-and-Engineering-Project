@@ -2,7 +2,7 @@ from os import path
 from random import choice, random
 # from pygame import mixer
 import pygame as pg
-
+import time
 from zombie_game.board import Board
 from zombie_game.functions import quit_game, collide_hit_rect, draw_player_health, get_hit
 from zombie_game.item import Item
@@ -39,6 +39,7 @@ class Game:
         self.map_rect = None
         self.intro_img = None
         self.zombie_img = None
+        self.zombie_img2 = None
         self.bullet_images = {}
         self.player_img = None
         self.player = None
@@ -91,6 +92,7 @@ class Game:
         self.load_scoreboard(SCOREBOARD)
         self.player_img = pg.image.load(path.join(self.img_folder, self.character_type + PLAYER_IMAGE_NAKED))
         self.zombie_img = pg.image.load(path.join(self.img_folder, ZOMBIE_IMAGE))
+        self.zombie_img2 = pg.image.load(path.join(self.img_folder, ZOMBIE_IMAGE2))
         self.load_bullets()
         self.lives_img = pg.image.load(path.join(self.img_folder, LIVES_IMG))
         self.lives_img = pg.transform.scale(self.lives_img, (20, 20))

@@ -1,3 +1,4 @@
+import time
 from random import randint, choice, random
 
 from zombie_game.functions import collide_with_object
@@ -13,6 +14,7 @@ class Zombie(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.image = game.zombie_img.copy()
+        self.image2 = game.zombie_img2.copy()
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.position = vector(x, y)
@@ -84,7 +86,11 @@ class Zombie(pg.sprite.Sprite):
 
     def _update_image(self):
         self.rotation = (self.game.player.position - self.position).angle_to(vector(1, 0))
-        self.image = pg.transform.rotate(self.game.zombie_img, self.rotation)
+        if int(round(time.time()))%2==0:
+            self.image = pg.transform.rotate(self.game.zombie_img, self.rotation)
+        else:
+            self.image = pg.transform.rotate(self.game.zombie_img2, self.rotation)
+        # self.image = pg.transform.rotate(ZOMBIE_IMAGE2, self.rotation)
 
     def _update_position(self):
         self.rect = self.image.get_rect()
