@@ -87,8 +87,8 @@
 498,554, 0,  0,  0,  0,  0, 554, 0,  0, 554, 0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0, 554, 0, 554, 0,  0, 554, 0,  0,  0, 554, 0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0, 554, 0,  0,  0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0, 554,0, 0, 554, 0,  0,  0,  0,  0, 554,
 498,554,554,554,554,554,554,554, 0,  0, 554,554,554,554,554,554,554, 0,  0,  0,  0, 554, 0, 554, 0, 554,554,554,554,554,554,554,554,554,554,554, 0, 554, 0,  0,  0,  0, 554, 0, 554, 0, 554, 0,  0,  0, 554,554,554,554,554, 0,  0,  0,  0,  0,  0,  0, 554,554,554,554,554,554,554,0, 0, 554,554,554,554,554,554,554,
 498,554, 0,  0,  0,  0,  0,  0,  0,  0, 440, 0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0, 554, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0, 0, 0,  0,  0,  0,  0,  0,  0, 554,
-498,554, 0,  0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0, 554, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0, 0, 0, 554, 0,  0,  0,  0,  0, 554,
-498,554,554,554,554,554,554,469, 0, 554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,0, 0, 554,554,554,554, 0, 554,554,
+498,554, 0,  0,  0,  0,  0,554,  0,  0, 554, 0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0, 554, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0, 554, 0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0,  0, 554, 0,  0,  0,  0,  0,  0, 0, 0, 554, 0,  0,  0,  0,  0, 554,
+498,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,0, 0, 554,554,554,554, 0, 554,554,
 498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,
 498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,
 498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,309,
@@ -176,7 +176,7 @@
 </data>
  </layer> -->
  <objectgroup id="3" name="Obstacles">
-  <object id="2" name="player" x="1501" y="1490" width="64" height="58"/>
+  <object id="2" name="player" x="1100" y="830" width="64" height="58"/>
   <!-- <object id="3" name="zombie" x="781" y="119" width="64" height="58"/>
   <object id="4" name="zombie" x="917" y="209" width="64" height="58"/>
   <object id="5" name="zombie" x="771" y="438" width="64" height="58"/>
@@ -185,7 +185,7 @@
   <object id="9" name="shotgun" x="709.5" y="1770" width="45" height="44"/>
   <object id="10" name="pistol" x="1393.5" y="1008" width="45" height="44"/>
 
-  <object id="17" name="wall" x="4608" y="62" width="64" height="574"/>
+  <!-- <object id="17" name="wall" x="4608" y="62" width="64" height="574"/> -->
 
   <!-- room 1 -->
   <object id="20" name="wall" x="130" y="402" width="64" height="58"/>
@@ -258,17 +258,68 @@
   <object id="20" name="wall" x="4158" y="88" width="64" height="58"/>
   
 
-  <!-- <object id="28" name="wall" x="0" y="0" width="4990" height="64"/>
+  <object id="28" name="wall" x="0" y="0" width="4990" height="64"/>
   <object id="29" name="wall" x="1" y="64" width="64" height="2178"/>
-  <object id="38" name="wall" x="66" y="835" width="58" height="58"/>
+
+  <!-- wall below triangular rooms -->
+  <object id="29" name="wall" x="1" y="520" width="4990" height="64"/>
+
+  <object id="29" name="wall" x="1" y="830" width="520" height="64"/>
+  <object id="29" name="wall" x="64" y="830" width="64" height="1090"/>
+  <object id="29" name="wall" x="457" y="890" width="64" height="64"/>
+  <object id="29" name="wall" x="457" y="1018" width="64" height="256"/>
+  <object id="29" name="wall" x="329" y="1082" width="128" height="64"/>
+  <object id="29" name="wall" x="1" y="1146" width="500" height="64"/>
+  <object id="29" name="wall" x="1" y="1338" width="500" height="64"/>
+  <object id="29" name="wall" x="392" y="1402" width="64" height="64"/>
+  <object id="29" name="wall" x="457" y="1338" width="64" height="192"/>
+  <object id="29" name="wall" x="457" y="1594" width="64" height="128"/>
+  <object id="29" name="wall" x="1" y="1658" width="500" height="64"/>
+  <object id="29" name="wall" x="1" y="1856" width="4400" height="64"/>
+  <object id="29" name="wall" x="648" y="830" width="445" height="64"/>
+  <object id="29" name="wall" x="648" y="830" width="64" height="128"/>
+  <object id="29" name="wall" x="1029" y="830" width="64" height="1090"/>
+  <object id="29" name="wall" x="648" y="1022" width="64" height="256"/>
+  <object id="29" name="wall" x="648" y="1086" width="192" height="64"/>
+  <object id="29" name="wall" x="648" y="1150" width="445" height="64"/>
+  <object id="29" name="wall" x="648" y="1342" width="445" height="64"/>
+  <object id="29" name="wall" x="648" y="1406" width="192" height="64"/>
+  <object id="29" name="wall" x="648" y="1470" width="64" height="64"/>
+  <object id="29" name="wall" x="648" y="1598" width="64" height="64"/>
+  <object id="29" name="wall" x="648" y="1662" width="445" height="64"/>
+  <object id="29" name="wall" x="648" y="1790" width="64" height="64"/>
+  <object id="29" name="wall" x="457" y="1790" width="64" height="64"/>
+
+  <!-- maze -->
+  <object id="29" name="wall" x="1349" y="830" width="64" height="1090"/>
+  <object id="29" name="wall" x="1413" y="830" width="256" height="64"/>
+  <object id="29" name="wall" x="1605" y="830" width="64" height="896"/>
+  <object id="29" name="wall" x="1605" y="1662" width="704" height="64"/>
+  <object id="29" name="wall" x="1477" y="1214" width="64" height="640"/>
+  <object id="29" name="wall" x="1733" y="830" width="704" height="64"/>
+  <object id="29" name="wall" x="1733" y="830" width="64" height="256"/>
+  <object id="29" name="wall" x="1989" y="830" width="64" height="256"/>
+  <object id="29" name="wall" x="1861" y="958" width="64" height="128"/>
+  <object id="29" name="wall" x="2181" y="958" width="64" height="128"/>
+  <object id="29" name="wall" x="1861" y="1022" width="384" height="64"/>
+  <object id="29" name="wall" x="1733" y="1214" width="64" height="192"/>
+  <object id="29" name="wall" x="1733" y="1342" width="448" height="64"/>
+  <object id="29" name="wall" x="1925" y="1214" width="64" height="320"/>
+  <object id="29" name="wall" x="1797" y="1534" width="64" height="128"/>
+  <object id="29" name="wall" x="2053" y="1534" width="64" height="128"/>
+  <object id="29" name="wall" x="2373" y="830" width="64" height="1090"/>
+  <object id="29" name="wall" x="2245" y="1150" width="128" height="64"/>
+
+
+  <!-- <object id="38" name="wall" x="66" y="835" width="58" height="58"/>
   <object id="39" name="wall" x="192" y="835" width="190" height="58"/>
   <object id="40" name="wall" x="318" y="894" width="64" height="960"/>
   <object id="41" name="wall" x="574" y="860" width="64" height="98"/>
   <object id="42" name="wall" x="574" y="1026" width="194" height="252"/>
   <object id="44" name="wall" x="576" y="1348" width="442" height="188"/>
-  <object id="45" name="wall" x="572" y="1792" width="64" height="62"/>
+  <object id="45" name="wall" x="572" y="1792" width="64" height="62"/> -->
   <object id="46" name="wall" x="4930" y="61" width="64" height="2170"/>
-  <object id="47" name="wall" x="4672" y="833" width="64" height="126"/>
+  <!-- <object id="47" name="wall" x="4672" y="833" width="64" height="126"/>
   <object id="48" name="wall" x="4288" y="771" width="64" height="1078"/>
   <object id="49" name="wall" x="4286" y="629" width="64" height="72"/>
   <object id="50" name="wall" x="4550" y="1024" width="184" height="252"/>
@@ -304,9 +355,9 @@
   <object id="87" name="wall" x="1728" y="1347" width="128" height="58"/>
   <object id="88" name="wall" x="1730" y="1603" width="128" height="58"/>
   <object id="89" name="wall" x="574" y="1601" width="64" height="62"/>
-  <object id="90" name="wall" x="61" y="1859" width="384" height="58"/>
+  <object id="90" name="wall" x="61" y="1859" width="384" height="58"/> -->
   <object id="91" name="wall" x="64" y="2177" width="4880" height="58"/>
-  <object id="92" name="wall" x="4865" y="1857" width="58" height="58"/> -->
+  <!-- <object id="92" name="wall" x="4865" y="1857" width="58" height="58"/> -->
 
   <object id="106" name="uzi" x="3561.5" y="162" width="45" height="44"/>
   <!-- <object id="109" name="wall" x="904" y="1223" width="38" height="48"/>
@@ -318,8 +369,8 @@
   <object id="143" name="wall" x="4369" y="1746" width="18" height="28"/> -->
 
 
-  <!-- <object id="152" name="zombie" x="1543" y="83.5" width="64" height="58"/>
-  <object id="153" name="zombie" x="1339" y="253.5" width="64" height="58"/>
+  <object id="152" name="zombie" x="1543" y="83.5" width="64" height="58"/>
+  <!-- <object id="153" name="zombie" x="1339" y="253.5" width="64" height="58"/>
   <object id="154" name="zombie" x="1433" y="384.5" width="64" height="58"/>
   <object id="155" name="zombie" x="1629" y="212.5" width="64" height="58"/>
   <object id="156" name="zombie" x="2155" y="345.5" width="64" height="58"/>
@@ -428,7 +479,8 @@
   <object id="304" name="wall" x="3330" y="840" width="116" height="52"/>
   <object id="305" name="wall" x="3140" y="1348" width="116" height="52"/>
   <object id="306" name="wall" x="3336" y="1350" width="116" height="52"/> -->
-  <object id="307" name="zombie" x="2664" y="993" width="64" height="58"/>
+
+  <!-- <object id="307" name="zombie" x="2664" y="993" width="64" height="58"/>
   <object id="308" name="zombie" x="2832" y="999" width="64" height="58"/>
   <object id="309" name="zombie" x="2756" y="1143" width="64" height="58"/>
   <object id="310" name="zombie" x="2840" y="1311" width="64" height="58"/>
@@ -450,7 +502,8 @@
   <object id="326" name="zombie" x="2306" y="2043" width="64" height="58"/>
   <object id="327" name="zombie" x="1080" y="2037" width="64" height="58"/>
   <object id="328" name="zombie" x="534" y="2005" width="64" height="58"/>
-  <object id="329" name="zombie" x="254" y="2001" width="64" height="58"/>
+  <object id="329" name="zombie" x="254" y="2001" width="64" height="58"/> -->
+  
   <!-- <object id="330" name="wall" x="2645" y="1937" width="20" height="30"/>
   <object id="331" name="wall" x="2517" y="1937" width="20" height="30"/>
   <object id="332" name="wall" x="2579" y="1939" width="20" height="30"/>
@@ -469,13 +522,15 @@
   <object id="345" name="water" x="2985.33" y="1129.67" width="64" height="58"/>
   <object id="346" name="beer" x="2984" y="1213.67" width="64" height="58"/>
   <object id="347" name="money" x="3248" y="1648.33" width="64" height="58"/>
-  <object id="349" name="key" x="4372" y="1580.33" width="64" height="58"/>
+  <!-- <object id="349" name="key" x="4372" y="1580.33" width="64" height="58"/> -->
   <object id="350" name="rifle" x="161.5" y="1610" width="45" height="44"/>
-  <object id="351" name="locked" x="129" y="838.667" width="59.3333" height="48"/>
-  <object id="352" name="locked_card" x="449" y="1874.67" width="59.3333" height="26.6667"/>
+  
+  <!-- <object id="351" name="locked" x="129" y="838.667" width="59.3333" height="48"/> -->
+  <!-- <object id="352" name="locked_card" x="449" y="1874.67" width="59.3333" height="26.6667"/>
   <object id="353" name="locked_card" x="1477" y="1864" width="122" height="22.6667"/>
   <object id="355" name="locked_card" x="4802.33" y="1874.67" width="59.3333" height="32"/>
-  <object id="356" name="locked_card" x="4313" y="708" width="16.6666" height="57.3333"/>
+  <object id="356" name="locked_card" x="4313" y="708" width="16.6666" height="57.3333"/> -->
+  
   <!-- <object id="358" name="zombie" x="2578.67" y="739" width="64" height="58"/>
   <object id="359" name="zombie" x="2901.33" y="713.667" width="64" height="58"/>
   <object id="360" name="zombie" x="3424" y="712.333" width="64" height="58"/>
@@ -483,8 +538,8 @@
   <object id="362" name="zombie" x="2002.67" y="697.667" width="64" height="58"/>
   <object id="363" name="zombie" x="1050.67" y="992.333" width="64" height="58"/> -->
   <object id="364" name="id_card" x="4364.67" y="201.667" width="46.6667" height="44.6667"/>
-  <object id="365" name="locked_gun" x="1477.67" y="868.667" width="122" height="22.6667"/>
-  <object id="366" name="wall" x="70.3333" y="1794.67" width="55.3333" height="58.6667"/>
+  <!-- <object id="365" name="locked_gun" x="1477.67" y="868.667" width="122" height="22.6667"/> -->
+  <!-- <object id="366" name="wall" x="70.3333" y="1794.67" width="55.3333" height="58.6667"/> -->
   <object id="367" name="ammo_small" x="887.5" y="1570" width="45" height="44"/>
   <object id="368" name="ammo_big" x="2165.5" y="1680" width="45" height="44"/>
   <object id="369" name="ammo_big" x="2931.5" y="1738" width="45" height="44"/>
