@@ -71,7 +71,7 @@
 498,0,0,0,132,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,0,0,132,0,
 498,0,0,132,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,0,0,132,0,0,
 498,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,0,0,132,0,0,0,
-498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,
+498,0,439,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,439,0,440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,132,0,132,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,439,0,440,0,0,0,0,
 498,469,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,469,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,469,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,469,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,554,469,554,554,554,554,554,
 498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,554,
 498,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,554,
@@ -181,14 +181,14 @@
 </data>
  </layer> -->
  <objectgroup id="3" name="Obstacles">
-  <object id="2" name="player" x="1100" y="830" width="64" height="58"/>
+  <object id="2" name="player" x="70" y="70" width="64" height="58"/>
   <!-- <object id="3" name="zombie" x="781" y="119" width="64" height="58"/>
   <object id="4" name="zombie" x="917" y="209" width="64" height="58"/>
   <object id="5" name="zombie" x="771" y="438" width="64" height="58"/>
   <object id="6" name="zombie" x="915" y="412" width="64" height="58"/> -->
   <object id="7" name="health" x="904" y="1285" width="45" height="44"/>
   <object id="9" name="shotgun" x="709.5" y="1770" width="45" height="44"/>
-  <object id="10" name="pistol" x="1393.5" y="1008" width="45" height="44"/>
+  <!-- <object id="10" name="pistol" x="1393.5" y="1008" width="45" height="44"/> -->
 
   <!-- <object id="17" name="wall" x="4608" y="62" width="64" height="574"/> -->
 
@@ -222,7 +222,7 @@
 
   
   <!-- room 4 -->
-  <object id="20" name="wall" x="2234" y="460" width="64" height="58"/>
+  <!-- <object id="20" name="wall" x="2234" y="460" width="64" height="58"/> -->
   <object id="20" name="wall" x="2170" y="402" width="64" height="58"/>
   <object id="20" name="wall" x="2106" y="330" width="64" height="58"/>
   <object id="20" name="wall" x="2042" y="272" width="64" height="58"/>
@@ -231,7 +231,7 @@
   <object id="20" name="wall" x="1850" y="88" width="64" height="58"/>
   
   <!-- room 5 -->
-  <object id="20" name="wall" x="2362" y="460" width="64" height="58"/>
+  <!-- <object id="20" name="wall" x="2362" y="460" width="64" height="58"/> -->
   <object id="20" name="wall" x="2426" y="402" width="64" height="58"/>
   <object id="20" name="wall" x="2490" y="330" width="64" height="58"/>
   <object id="20" name="wall" x="2554" y="272" width="64" height="58"/>
@@ -262,7 +262,7 @@
 
   
   <!-- room 8 -->
-  <object id="20" name="wall" x="4542" y="460" width="64" height="58"/>
+  <!-- <object id="20" name="wall" x="4542" y="460" width="64" height="58"/> -->
   <object id="20" name="wall" x="4478" y="402" width="64" height="58"/>
   <object id="20" name="wall" x="4414" y="330" width="64" height="58"/>
   <object id="20" name="wall" x="4350" y="272" width="64" height="58"/>
@@ -275,7 +275,7 @@
   
 
   <!-- room 9 -->
-  <object id="20" name="wall" x="4670" y="460" width="64" height="58"/>
+  <!-- <object id="20" name="wall" x="4670" y="460" width="64" height="58"/> -->
   <object id="20" name="wall" x="4734" y="402" width="64" height="58"/>
   <object id="20" name="wall" x="4798" y="330" width="64" height="58"/>
   <object id="20" name="wall" x="4862" y="272" width="64" height="58"/>
@@ -443,7 +443,7 @@
 
 
   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Aise daalna hai fuel bottle, speed and coins !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-  <object id="153" name="fuel_bottle" x="1543" y="83.5" width="64" height="58"/> 
+  <!-- <object id="153" name="fuel_bottle" x="1543" y="83.5" width="64" height="58"/>  -->
   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Aise daalna hai fuel bottle, speed and coins !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 
@@ -627,10 +627,86 @@
   <object id="374" name="ammo_big" x="4829.5" y="328" width="45" height="44"/>
   <object id="375" name="ammo_small" x="4609.5" y="1792" width="45" height="44"/>
   <object id="376" name="ammo_small" x="4159.5" y="2054" width="45" height="44"/>
-  <object id="377" name="ammo_small" x="127.5" y="2046" width="45" height="44"/>
+  <!-- <object id="377" name="ammo_small" x="127.5" y="2046" width="45" height="44"/> -->
   <object id="378" name="ammo_small" x="133.5" y="182" width="45" height="44"/>
   <object id="379" name="ammo_big" x="1043.5" y="150" width="45" height="44"/>
   <object id="380" name="ammo_small" x="2199.5" y="182" width="45" height="44"/>
   <object id="381" name="ammo_big" x="3317.5" y="236" width="45" height="44"/>
+  
+  <object id="10" name="pistol" x="400" y="95" width="45" height="44"/>
+
+  <object id="153" name="zombie" x="500" y="200" width="64" height="58"/>
+  <object id="153" name="zombie" x="650" y="350" width="64" height="58"/>
+  <object id="153" name="zombie" x="900" y="400" width="64" height="58"/>
+  <object id="153" name="zombie" x="1050" y="100" width="64" height="58"/>
+  
+  <object id="153" name="zombie" x="1000" y="400" width="64" height="58"/>
+  <object id="153" name="zombie" x="1200" y="100" width="64" height="58"/>
+  <object id="153" name="zombie" x="1450" y="350" width="64" height="58"/>
+  <object id="153" name="zombie" x="1950" y="100" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="2300" y="100" width="64" height="58"/>
+  <object id="153" name="zombie" x="2550" y="350" width="64" height="58"/>
+  <object id="153" name="zombie" x="2700" y="400" width="64" height="58"/>
+  <object id="153" name="zombie" x="3050" y="100" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="3200" y="200" width="64" height="58"/>
+  <object id="153" name="zombie" x="3300" y="100" width="64" height="58"/>
+  <object id="153" name="zombie" x="3700" y="400" width="64" height="58"/>
+  <object id="153" name="zombie" x="3950" y="100" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="4000" y="200" width="64" height="58"/>
+  <object id="153" name="zombie" x="4100" y="100" width="64" height="58"/>
+  <object id="153" name="zombie" x="4450" y="350" width="64" height="58"/>
+  <object id="153" name="zombie" x="4600" y="400" width="64" height="58"/>
+  
+  <object id="153" name="zombie" x="500" y="650" width="64" height="58"/>
+  <object id="153" name="zombie" x="1100" y="600" width="64" height="58"/>
+  <object id="153" name="zombie" x="2450" y="750" width="64" height="58"/>
+  <object id="153" name="zombie" x="3600" y="800" width="64" height="58"/>
+  <object id="153" name="zombie" x="4750" y="600" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="100" y="900" width="64" height="58"/>
+  <object id="153" name="zombie" x="200" y="1750" width="64" height="58"/>
+  <object id="153" name="zombie" x="400" y="1250" width="64" height="58"/>
+  <object id="153" name="zombie" x="500" y="1500" width="64" height="58"/>
+  <object id="153" name="zombie" x="750" y="900" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="800" y="1300" width="64" height="58"/>
+  <object id="153" name="zombie" x="900" y="1600" width="64" height="58"/>
+  <object id="153" name="zombie" x="4050" y="950" width="64" height="58"/>
+  <object id="153" name="zombie" x="4100" y="1700" width="64" height="58"/>
+  <object id="153" name="zombie" x="4250" y="1200" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="4300" y="1500" width="64" height="58"/>
+  <object id="153" name="zombie" x="3500" y="1100" width="64" height="58"/>
+  <object id="153" name="zombie" x="4650" y="1550" width="64" height="58"/>
+  <object id="153" name="zombie" x="4700" y="1100" width="64" height="58"/>
+  <object id="153" name="zombie" x="4850" y="1300" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="1400" y="900" width="64" height="58"/>
+  <object id="153" name="zombie" x="1600" y="1750" width="64" height="58"/>
+  <object id="153" name="zombie" x="1700" y="1250" width="64" height="58"/>
+  <object id="153" name="zombie" x="1900" y="1500" width="64" height="58"/>
+  <object id="153" name="zombie" x="2000" y="900" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="2100" y="1300" width="64" height="58"/>
+  <object id="153" name="zombie" x="2200" y="1600" width="64" height="58"/>
+  <object id="153" name="zombie" x="2450" y="950" width="64" height="58"/>
+  <object id="153" name="zombie" x="2500" y="1700" width="64" height="58"/>
+  <object id="153" name="zombie" x="2750" y="1200" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="2800" y="1500" width="64" height="58"/>
+  <object id="153" name="zombie" x="2900" y="1100" width="64" height="58"/>
+  <object id="153" name="zombie" x="3050" y="1550" width="64" height="58"/>
+  <object id="153" name="zombie" x="3200" y="1100" width="64" height="58"/>
+  <object id="153" name="zombie" x="3350" y="1300" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="450" y="1980" width="64" height="58"/>
+  <object id="153" name="zombie" x="1200" y="2000" width="64" height="58"/>
+  <object id="153" name="zombie" x="3350" y="2000" width="64" height="58"/>
+  <object id="153" name="zombie" x="1200" y="1200" width="64" height="58"/>
+
+
  </objectgroup>
 </map>

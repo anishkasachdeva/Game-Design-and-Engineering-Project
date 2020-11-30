@@ -78,9 +78,9 @@ class Menu:
             pass
 
     def game_about(self):
-        self.i = 0.16
-        self.set_mob_limit(0.1, 97, 90, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
-        if 95 < self.pos_y < 97:
+        self.i = 0.75
+        self.set_mob_limit(0.1, 450, 430, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
+        if 440 < self.pos_y < 450:
             self.game_intro()
         else:
             pass
