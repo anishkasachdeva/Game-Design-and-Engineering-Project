@@ -31,10 +31,12 @@ class Menu:
         self.i = 0
 
     def game_intro(self):
-        self.i = 0.56
-        self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
-        if 335 < self.pos_y < 337:
+        self.i = 0.46
+        self.set_mob_limit(0.1, 325, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
+        if 200 < self.pos_y < 335:
             self.game_choosing_difficulty()
+        elif 335 < self.pos_y < 337:
+            self.game_about()
             # self.game_choose_character()
         elif 385 < self.pos_y < 397:
             self.game_scoreboard()
@@ -73,6 +75,14 @@ class Menu:
         if 185 < self.pos_y < 187:
             self.game_intro()
         elif 275 < self.pos_y < 277:
+            pass
+
+    def game_about(self):
+        self.i = 0.16
+        self.set_mob_limit(0.1, 97, 90, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
+        if 95 < self.pos_y < 97:
+            self.game_intro()
+        else:
             pass
 #-----------------------------------------------------------------------------------------------------------------------------------------
 
