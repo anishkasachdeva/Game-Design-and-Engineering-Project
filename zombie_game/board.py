@@ -15,6 +15,7 @@ class Board:
         self.options_font = pg.font.Font(my_font, 65)
         self.title_font = pg.font.Font(my_font, 90)
         self.difficulty_font = pg.font.Font(my_font, 70)
+        self.about_font = pg.font.Font(my_font, 20)
         self.game_over_font = pg.font.Font(my_font, 120)
 
     def draw_menu(self, *args):
@@ -88,7 +89,18 @@ class Board:
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         self.draw_text(self.surface, "About:", self.width / 2, self.height * 0.1, self.difficulty_font)
-        self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.2, self.menu_font)
+        self.draw_text(self.surface, "The ship got cursed, and our sailor stuck in an island populated with spirits. To" , self.width/2, self.height * 0.25, self.about_font)
+        self.draw_text(self.surface, "return to his home, the sailor wants ship fuel. In search of ship fuel, he enters" , self.width/2, self.height * 0.30, self.about_font)
+        self.draw_text(self.surface, "a haunted laboratory filled with spirits and searches for the fuel. All the rooms" , self.width/2, self.height * 0.35, self.about_font)
+        self.draw_text(self.surface, "are locked, so he needs to collect keys scattered all over the place and finally" , self.width/2, self.height * 0.40, self.about_font)
+        self.draw_text(self.surface, "find the key to the main room having the fuel. To achieve this, he needs to kill" , self.width/2, self.height * 0.45, self.about_font)
+        self.draw_text(self.surface, "all the spirits in his way because they will get attracted by the sailor and lowers" , self.width/2, self.height * 0.50, self.about_font)
+        self.draw_text(self.surface, "his health. The player needs to help the sailor find the key to the main door and" , self.width/2, self.height * 0.55, self.about_font)
+        self.draw_text(self.surface, "collect the fuel, killing all the spirits." , self.width/2, self.height * 0.60, self.about_font)
+
+
+        #The ship got cursed, and our sailor stuck in an island populated with spirits. To return to his home, the sailorwants ship fuel. In search of ship fuel, he enters a haunted laboratory filled with spirits and searches for the fuel.  All the rooms are locked, so he needs to collect keys scattered all over the place and finally find the key to the main room having the fuel. To achieve this, he needs to kill all the spirits in his way because they will get attracted by the sailor and lower his health. The player needs to help the sailor find the key to the main door and collect the fuel, killing all the spirits.
+        self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
