@@ -146,7 +146,10 @@ ITEM_IMAGES = {
     'pistol': 'pistol.png',
     'shotgun': 'shotgun.png',
     'rifle': 'rifle.png',
-    'uzi': 'uzi.png'
+    'uzi': 'uzi.png',
+    'fuel_bottle' : 'fuel_bottle.png',
+    'coins' : 'coins1.png',
+    'speed' : 'speed.png'
 }
 GREEN_SMOKE = [
     'fart00.png',

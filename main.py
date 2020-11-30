@@ -70,14 +70,14 @@ class Game:
         self.map_folder = path.join(self.game_folder, 'maps')
         self.score_list = []
         self.character_type = 'hitman1_'
-        self.mini_map_img = None
+        # self.mini_map_img = None
         self.load_data()
         self.light_rect = self.light_mask.get_rect()
         self.night = True
         self.new()
         self.mini_map = pg.Surface([self.map_rect.width / 15, self.map_rect.height / 15], pg.SRCALPHA, 32)
-        self.mini_map_img = pg.image.load(path.join(self.map_folder, 'clab_map.png'))
-        self.mini_map_img = pg.transform.scale(self.mini_map_img, (int(self.map_rect.width / 15), int(self.map_rect.height / 15)))
+        # self.mini_map_img = pg.image.load(path.join(self.map_folder, 'clab_map.png'))
+        # self.mini_map_img = pg.transform.scale(self.mini_map_img, (int(self.map_rect.width / 15), int(self.map_rect.height / 15)))
         self.camera = Camera(self, self.map.width, self.map.height)
         self.fps_clock = pg.time.Clock()
         self.dt = None
@@ -434,14 +434,15 @@ class Game:
                 f.write(score + '\n')
 
     def update_mini_map(self):
-        self.mini_map.blit(self.mini_map_img, (0, 0))
-        player_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
-        player_map_square.fill(BLUE)
-        self.mini_map.blit(player_map_square, (self.player.rect.x / 15, self.player.rect.y / 15))
-        for zombie in self.zombies:
-            zombie_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
-            zombie_map_square.fill(RED)
-            self.mini_map.blit(zombie_map_square, (zombie.rect.x / 15, zombie.rect.y / 15))
+        pass
+        # self.mini_map.blit(self.mini_map_img, (0, 0))
+        # player_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
+        # player_map_square.fill(BLUE)
+        # self.mini_map.blit(player_map_square, (self.player.rect.x / 15, self.player.rect.y / 15))
+        # for zombie in self.zombies:
+        #     zombie_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
+        #     zombie_map_square.fill(RED)
+        #     self.mini_map.blit(zombie_map_square, (zombie.rect.x / 15, zombie.rect.y / 15))
 
     def _set_params_after_bonus(self):
         timer_start = pg.time.get_ticks()
