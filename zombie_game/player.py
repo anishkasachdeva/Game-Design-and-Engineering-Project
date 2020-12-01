@@ -43,6 +43,7 @@ class Player(pg.sprite.Sprite):
         self.accurate_shot = 2
         self.total_accuracy = 0
         self.name = None
+        self.cur_time = 0
 
     def add_shield(self, amount):
         self.shield += amount
@@ -55,6 +56,9 @@ class Player(pg.sprite.Sprite):
         self.vel = vector(0, 0)
         self.rotation_speed = 0
         keys = pg.key.get_pressed()
+        if self.cur_time < int(round(time.time())):
+            self.speed = PLAYER_SPEED
+            self.cur_time = 0
         if keys[pg.K_LEFT]:
             self.rotation_speed = PLAYER_ROTATION_SPEED
             if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:

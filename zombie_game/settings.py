@@ -137,7 +137,7 @@ ITEM_IMAGES = {
     'mini_health': 'genericItem_color_100.png',
     'water': 'genericItem_color_118.png',
     'beer': 'genericItem_color_119.png',
-    'coffee': 'genericItem_color_124.png',
+    # 'coffee': 'genericItem_color_124.png',
     'id_card': 'genericItem_color_151.png',
     'key': 'genericItem_color_155.png',
     'money': 'genericItem_color_158.png',
@@ -149,7 +149,7 @@ ITEM_IMAGES = {
     'uzi': 'uzi.png',
     'fuel_bottle' : 'fuel_bottle.png',
     'coins' : 'coins1.png',
-    'speed' : 'speed.png'
+    'coffee' : 'speed.png'
 }
 GREEN_SMOKE = [
     'fart00.png',

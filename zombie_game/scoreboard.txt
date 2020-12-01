@@ -1,5 +1,5 @@
 f 100.0
+d 100.0
 d 95.65
 s 80.0
 Albert 0
-Wolverine 0

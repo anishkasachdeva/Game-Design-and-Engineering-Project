@@ -204,7 +204,7 @@ class Game:
         #     self.locked_room_reaction()
         # if self.player.has_key:
         #     self.locked_room_key.kill()
-        if self.player.has_id == 2:
+        if self.player.has_id == 3:
             self._destroy_locked_door()
         # if len(self.zombies) <= 0:
         #     self.update_scoreboard(self.player.total_accuracy)
@@ -215,8 +215,9 @@ class Game:
         delete = False
         for hit in hits:
             if hit.type == 'coffee':
-                delete = self.get_bonus("EXTRA SPEED")
+                hit.kill()
                 self.player.speed = 300
+                self.player.cur_time = int(round(time.time())) + 15
             if hit.type == 'water':
                 if self.player.shield < PLAYER_SHIELD:
                     delete = self.get_bonus()
@@ -413,7 +414,7 @@ class Game:
         self.board.draw_adds(self.board.surface, self.width-340, self.height-160, self.mini_map)
         # if self.player.has_key:
         #     self.board.draw_adds(self.board.surface, 80, 50, self.items_images['key'])
-        if self.player.has_id == 2:
+        if self.player.has_id == 3:
             self.board.draw_adds(self.board.surface, 30, 50, self.items_images['key'])
         if self.bonus:
             self.board.draw_bonus(self.player.bonus)

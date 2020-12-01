@@ -595,12 +595,13 @@
   <object id="341" name="mini_health" x="3114.67" y="105.667" width="64" height="58"/>
   <object id="342" name="mini_health" x="1245.33" y="460.333" width="64" height="58"/>
   <object id="343" name="mini_health" x="1424" y="2119" width="64" height="58"/>
-  <object id="344" name="coffee" x="2984" y="1045.67" width="64" height="58"/>
+  <!-- <object id="344" name="coffee" x="2984" y="1045.67" width="64" height="58"/>
   <object id="345" name="water" x="2985.33" y="1129.67" width="64" height="58"/>
-  <object id="346" name="beer" x="2984" y="1213.67" width="64" height="58"/>
-  <object id="347" name="money" x="3248" y="1648.33" width="64" height="58"/>
+  <object id="346" name="beer" x="2984" y="1213.67" width="64" height="58"/> -->
+  <!-- <object id="347" name="money" x="3248" y="1648.33" width="64" height="58"/> -->
   <object id="349" name="key" x="1418" y="1780" width="64" height="58"/>
   <object id="349" name="key" x="3402" y="900" width="64" height="58"/>
+  <object id="349" name="key" x="4202" y="200" width="64" height="58"/>
   <object id="350" name="rifle" x="161.5" y="1610" width="45" height="44"/>
   <object id="353" name="locked_card" x="4401" y="1856" width="149" height="22.6667"/>
   
@@ -911,6 +912,10 @@
   <object id="153" name="coins" x="3020" y="1990" width="64" height="64"/>
   <object id="153" name="coins" x="3000" y="2010" width="64" height="64"/>
   <object id="153" name="coins" x="3020" y="2010" width="64" height="64"/>
+  
+  <object id="153" name="coffee" x="1100" y="1300" width="164" height="164"/>
+  <object id="153" name="coffee" x="3600" y="1300" width="164" height="164"/>
+  <object id="153" name="coffee" x="1700" y="200" width="164" height="164"/>
 
 
 
