@@ -303,6 +303,11 @@ class Game:
             if hit.type == 'money':
                 hit.kill()
                 self.player.money = True
+            if hit.type == 'fuel_bottle':
+                self.update_scoreboard(self.player.total_accuracy)
+                self.playing = False
+                self.menu.game_over(self.score_list, 'Congrats!!!')
+
 
     def get_bonus(self, bonus=None):
         self.sound_effects['heal'].play()

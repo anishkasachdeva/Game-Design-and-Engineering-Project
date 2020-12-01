@@ -634,6 +634,7 @@
   <object id="381" name="ammo_big" x="3317.5" y="236" width="45" height="44"/>
   
   <object id="10" name="pistol" x="400" y="95" width="45" height="44"/>
+  <object id="10" name="fuel_bottle" x="127" y="2000" width="48" height="179"/>
 
   <object id="153" name="zombie" x="500" y="200" width="64" height="58"/>
   <object id="153" name="zombie" x="650" y="350" width="64" height="58"/>
