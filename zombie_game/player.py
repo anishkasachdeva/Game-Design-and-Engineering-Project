@@ -6,7 +6,7 @@ from zombie_game.bullet import Bullet
 from zombie_game.functions import collide_with_object
 from zombie_game.settings import *
 from zombie_game.smoke import Smoke
-
+import global_variables
 
 class Player(pg.sprite.Sprite):
 
@@ -49,29 +49,31 @@ class Player(pg.sprite.Sprite):
         if self.shield > PLAYER_SHIELD:
             self.shield = PLAYER_SHIELD
 
+
+
     def get_keys(self):
         self.vel = vector(0, 0)
         self.rotation_speed = 0
         keys = pg.key.get_pressed()
-        if keys[pg.K_LEFT] or keys[pg.K_a]:
+        if keys[pg.K_LEFT]:
             self.rotation_speed = PLAYER_ROTATION_SPEED
             if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
             elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
-        if keys[pg.K_RIGHT] or keys[pg.K_d]:
+        if keys[pg.K_RIGHT]:
             self.rotation_speed = - PLAYER_ROTATION_SPEED
             if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
             elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
-        if keys[pg.K_UP] or keys[pg.K_w]:
+        if keys[pg.K_UP]:
             self.vel = vector(self.speed, 0).rotate(-self.rotation)
             if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
             elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
-        if keys[pg.K_DOWN] or keys[pg.K_s]:
+        if keys[pg.K_DOWN]:
             self.vel = vector(-self.speed, 0).rotate(-self.rotation)
             if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
                 self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
@@ -98,6 +100,56 @@ class Player(pg.sprite.Sprite):
             if 'rifle' in self.all_weapons and self.weapon is not 'rifle':
                 self.select_weapon('rifle')
 
+    def get_keys_alpha(self):
+        self.vel = vector(0, 0)
+        self.rotation_speed = 0
+        keys = pg.key.get_pressed()
+        if keys[pg.K_a]:
+            self.rotation_speed = PLAYER_ROTATION_SPEED
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
+        if keys[pg.K_d]:
+            self.rotation_speed = - PLAYER_ROTATION_SPEED
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
+        if keys[pg.K_w]:
+            self.vel = vector(self.speed, 0).rotate(-self.rotation)
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
+        if keys[pg.K_s]:
+            self.vel = vector(-self.speed, 0).rotate(-self.rotation)
+            if int(round(time.time() * 10))%2==0 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED2))
+            elif int(round(time.time() * 10))%2==1 and not keys[pg.K_SPACE]:
+                self.game.player_img = pg.image.load(path.join(self.game.img_folder, self.game.character_type + PLAYER_IMAGE_NAKED1))
+        if keys[pg.K_SPACE]:
+            if self.weapon is not None:
+                if self.ammo[self.weapon] > 0:
+                    self.shoot()
+                else:
+                    self.game.sound_effects['out_of_ammo'].play()
+        if keys[pg.K_1]:
+            self.weapon = None
+        if keys[pg.K_2]:
+            if 'pistol' in self.all_weapons and self.weapon is not 'pistol':
+                self.select_weapon('pistol')
+        if keys[pg.K_3]:
+            if 'shotgun' in self.all_weapons and self.weapon is not 'shotgun':
+                self.select_weapon('shotgun')
+        if keys[pg.K_4]:
+            if 'uzi' in self.all_weapons and self.weapon is not 'uzi':
+                self.select_weapon('uzi')
+        if keys[pg.K_5]:
+            if 'rifle' in self.all_weapons and self.weapon is not 'rifle':
+                self.select_weapon('rifle')
+
+
     def select_weapon(self, weapon):
         self.game.sound_effects[weapon].play()
         self.weapon = weapon
@@ -114,7 +166,10 @@ class Player(pg.sprite.Sprite):
             self._create_smoke(position)
 
     def update(self):
-        self.get_keys()
+        if global_variables.game_control == 1 :
+            self.get_keys()
+        else :
+            self.get_keys_alpha()
         self._update_rotation()
         self._update_weapon()
         self._update_damage()

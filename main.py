@@ -12,7 +12,7 @@ from zombie_game.screen import Camera, TiledMap
 from zombie_game.settings import *
 from zombie_game.walls import Obstacle
 from zombie_game.zombie import Zombie
-
+import global_variables
 
 class Game:
 

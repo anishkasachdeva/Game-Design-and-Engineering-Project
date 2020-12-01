@@ -4,6 +4,7 @@ from zombie_game.drawable import Drawable
 from zombie_game.functions import quit_game
 from zombie_game.settings import *
 
+import global_variables
 
 class MenuMob(Drawable, pg.sprite.Sprite):
 
@@ -63,10 +64,17 @@ class Menu:
         self.i = 0.56
         self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_options, 40)
         # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_intro)
-        if 185 < self.pos_y < 187:
+        if 330 < self.pos_y < 350:
+            global_variables.game_control = 1
+            print('arrow')
             self.game_intro() 
-        elif 275 < self.pos_y < 277:
-            pass
+        elif 350 < self.pos_y < 400:
+            global_variables.game_control = 2
+            print('alphabets')
+            self.game_intro()
+        else:
+            print('nothing')
+            self.game_intro()
     
     def audio_controls(self):
         self.i = 0.56
