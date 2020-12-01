@@ -307,7 +307,9 @@ class Game:
                 self.update_scoreboard(self.player.total_accuracy)
                 self.playing = False
                 self.menu.game_over(self.score_list, 'Congrats!!!')
-
+            if hit.type == 'coins':
+                hit.kill()
+            
 
     def get_bonus(self, bonus=None):
         self.sound_effects['heal'].play()
