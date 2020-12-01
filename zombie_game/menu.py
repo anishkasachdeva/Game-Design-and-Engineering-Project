@@ -32,15 +32,15 @@ class Menu:
 
     def game_intro(self):
         self.i = 0.46
-        self.set_mob_limit(0.1, 325, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
-        if 200 < self.pos_y < 335:
+        self.set_mob_limit(0.1, 500, 800, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
+        if 400 < self.pos_y < 500:
             self.game_choosing_difficulty()
-        elif 335 < self.pos_y < 337:
+        elif 500 < self.pos_y < 600:
             self.game_about()
             # self.game_choose_character()
-        elif 385 < self.pos_y < 397:
+        elif 600 < self.pos_y < 700:
             self.game_scoreboard()
-        elif 455 < self.pos_y < 457:
+        elif 700 < self.pos_y < 800:
             self.game_options()
         else:
             quit_game()
@@ -78,12 +78,12 @@ class Menu:
             pass
 
     def game_about(self):
-        self.i = 0.75
-        self.set_mob_limit(0.1, 450, 430, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
-        if 440 < self.pos_y < 450:
+        self.i = 0.78
+        self.set_mob_limit(0.1, 800, 800, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
+        if 700 < self.pos_y <= 800:
             self.game_intro()
-        else:
-            pass
+        # else:
+            # pass
 #-----------------------------------------------------------------------------------------------------------------------------------------
 
     def game_scoreboard(self):
@@ -107,12 +107,12 @@ class Menu:
 
     def game_choosing_difficulty(self):
         self.i = 0.16
-        self.set_mob_limit(0.2, 97, 455, OPTIONS_SPRITE_POS_X, self.game.board.draw_choosing_difficulty, self.game_choose_character)
-        if 95 < self.pos_y < 97:
+        self.set_mob_limit(0.2, 200, 600, OPTIONS_SPRITE_POS_X, self.game.board.draw_choosing_difficulty, self.game_choose_character)
+        if 100 < self.pos_y < 200:
             difficult = "easy"
-        elif 215 < self.pos_y < 217:
+        elif 200 < self.pos_y < 300:
             difficult = "normal"
-        elif 335 < self.pos_y < 337:
+        elif 300 < self.pos_y < 400:
             difficult = "hard"
         else:
             difficult = "hell"
