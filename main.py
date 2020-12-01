@@ -465,10 +465,10 @@ class Game:
 
 
 if __name__ == "__main__":
-    pg.mixer.init() 
-    pg.mixer.music.load("scary1_halloween.wav") 
-    pg.mixer.music.set_volume(0.4)   
-    pg.mixer.music.play(-1) 
+    global_variables.game_music.init() 
+    global_variables.game_music.music.load("scary1_halloween.wav") 
+    global_variables.game_music.music.set_volume(0.4)   
+    global_variables.game_music.music.play(-1) 
     while True:
         # pass
     # mixer.init()

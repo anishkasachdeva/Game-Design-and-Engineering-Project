@@ -80,10 +80,15 @@ class Menu:
         self.i = 0.56
         self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_options, 40)
         # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_intro)
-        if 185 < self.pos_y < 187:
+        if 330 < self.pos_y < 350:
             self.game_intro()
-        elif 275 < self.pos_y < 277:
-            pass
+        elif 350 < self.pos_y < 400:
+            global_variables.game_music.music.stop()
+            self.game_intro()
+        else:
+            print('nothing')
+            self.game_intro()
+            # pass
 
     def game_about(self):
         self.i = 0.16
