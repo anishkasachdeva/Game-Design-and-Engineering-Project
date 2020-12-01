@@ -200,15 +200,15 @@ class Game:
         self._collide_player_with_zombie()
         self._collide_bullet_with_zombie()
         self._collide_bullet_with_door()
-        if not self.player.has_key or not self.player.has_id:
-            self.locked_room_reaction()
-        if self.player.has_key:
-            self.locked_room_key.kill()
-        if self.player.has_id:
+        # if not self.player.has_key or not self.player.has_id:
+        #     self.locked_room_reaction()
+        # if self.player.has_key:
+        #     self.locked_room_key.kill()
+        if self.player.has_id == 2:
             self._destroy_locked_door()
-        if len(self.zombies) <= 0:
-            self.update_scoreboard(self.player.total_accuracy)
-            self.menu.game_over(self.score_list, 'Congratulations')
+        # if len(self.zombies) <= 0:
+        #     self.update_scoreboard(self.player.total_accuracy)
+        #     self.menu.game_over(self.score_list, 'Congratulations')
 
     def _collide_player_with_bonus(self):
         hits = pg.sprite.spritecollide(self.player, self.bonus_items, False)
@@ -295,12 +295,12 @@ class Game:
                 self.get_ammo(hit, 'small')
             if hit.type == 'ammo_big':
                 self.get_ammo(hit, 'big')
+            # if hit.type == 'key':
+            #     hit.kill()
+            #     self.player.has_key = True
             if hit.type == 'key':
                 hit.kill()
-                self.player.has_key = True
-            if hit.type == 'id_card':
-                hit.kill()
-                self.player.has_id = True
+                self.player.has_id += 1
             if hit.type == 'money':
                 hit.kill()
                 self.player.money = True
@@ -411,10 +411,10 @@ class Game:
         self.board.draw_coins_collected(self.coins)
         self.board.draw_adds(self.board.surface, 150, 10, self.lives_img, self.player.lives)
         self.board.draw_adds(self.board.surface, self.width-340, self.height-160, self.mini_map)
-        if self.player.has_key:
-            self.board.draw_adds(self.board.surface, 80, 50, self.items_images['key'])
-        if self.player.has_id:
-            self.board.draw_adds(self.board.surface, 30, 50, self.items_images['id_card'])
+        # if self.player.has_key:
+        #     self.board.draw_adds(self.board.surface, 80, 50, self.items_images['key'])
+        if self.player.has_id == 2:
+            self.board.draw_adds(self.board.surface, 30, 50, self.items_images['key'])
         if self.bonus:
             self.board.draw_bonus(self.player.bonus)
             self._set_params_after_bonus()

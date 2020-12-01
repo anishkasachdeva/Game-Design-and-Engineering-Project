@@ -34,7 +34,7 @@ class Player(pg.sprite.Sprite):
         self.damaged = False
         self.damage_alpha = None
         self.has_key = False
-        self.has_id = False
+        self.has_id = 0
         self.speed = PLAYER_SPEED
         self.bonus = None
         self.ammo = AMMO
