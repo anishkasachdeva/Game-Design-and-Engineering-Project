@@ -27,6 +27,7 @@ class Game:
         self.board = Board(self.width, self.height)
         self.all_sprites = pg.sprite.LayeredUpdates()
         self.walls = pg.sprite.Group()
+        self.coins = 0
         self.zombies = pg.sprite.Group()
         self.bullets = pg.sprite.Group()
         self.items = pg.sprite.Group()
@@ -308,6 +309,8 @@ class Game:
                 self.playing = False
                 self.menu.game_over(self.score_list, 'Congrats!!!')
             if hit.type == 'coins':
+                self.coins += 1
+                # print(self.coins)
                 hit.kill()
             
 
@@ -405,6 +408,7 @@ class Game:
             self.render_fog()
         draw_player_health(self.board.surface, 20, 10, self.player.shield / PLAYER_SHIELD)
         self.board.draw_zombies_left(len(self.zombies))
+        self.board.draw_coins_collected(self.coins)
         self.board.draw_adds(self.board.surface, 150, 10, self.lives_img, self.player.lives)
         self.board.draw_adds(self.board.surface, self.width-340, self.height-160, self.mini_map)
         if self.player.has_key:
@@ -416,7 +420,7 @@ class Game:
             self._set_params_after_bonus()
         if self.player.weapon is not None:
             self.board.draw_adds(self.board.surface, 250, 7, self.items_images[self.player.weapon])
-            self.board.draw_ammo_quantity('Ammo: {}'.format(self.player.ammo[self.player.weapon]))
+            self.board.draw_ammo_quantity('Bullets: {}'.format(self.player.ammo[self.player.weapon]))
         if self.game_paused:
             self.board.surface.blit(self.dim_screen, (0, 0))
             self.board.draw_pause()

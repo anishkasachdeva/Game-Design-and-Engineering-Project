@@ -60,7 +60,7 @@ class Menu:
             self.game_intro()
 
 #-----------------------------------------------------------------------------------------------------------------------------------------
-    def game_controls(self):
+    def game_conzorols(self):
         self.i = 0.56
         self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_options, 40)
         # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_game_controls, self.game_intro)

@@ -166,6 +166,9 @@ class Board:
     def draw_ammo_quantity(self, ammo: str):
         self.draw_text(self.surface, ammo, 400, 25, self.bonus_font)
 
+    def draw_coins_collected(self, coins):
+        self.draw_text(self.surface, "Coins : {}".format(coins) , 600, 25, self.bonus_font)
+
     def draw_money(self):
         self.draw_text(self.surface, "9 800 zl", self.width - 100, 60, self.bonus_font)
 
