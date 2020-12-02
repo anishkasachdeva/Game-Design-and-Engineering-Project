@@ -82,7 +82,7 @@ class Menu:
         # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_intro)
         if 330 < self.pos_y < 350:
             global_variables.is_mute = True
-            global_variables.game_music.music.pause()
+            # global_variables.game_music.music.pause()
             # self.game.zombie_moan_sounds = [];
             # self.game.zombie_pain_sounds = [];
             # self.game.zombie_die_sounds = [];
@@ -92,7 +92,7 @@ class Menu:
 
             # self.game_intro()
         elif 350 < self.pos_y < 400:
-            global_variables.game_music.music.unpause()
+            # global_variables.game_music.music.unpause()
             global_variables.is_mute = False
             # self.game.zombie_moan_sounds = global_variables.zombie_moan_sounds_copy;
             # self.game.zombie_pain_sounds = global_variables.zombie_pain_sounds_copy;

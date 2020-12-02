@@ -11,8 +11,8 @@ BLUE = (0, 0, 255)
 
 SCOREBOARD = './zombie_game/scoreboard.txt'
 FPS = 80
-SCREEN_WIDTH = 1300
-SCREEN_HEIGHT = 800
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 600
 MENU_FONT_COLOR = (255, 140, 0)
 BAR_LENGTH = 100
 BAR_HEIGHT = 20
@@ -188,7 +188,8 @@ SOUND_EFFECTS = {
     'locked_door': 'locked_door.wav',
     'broken_door': 'broken_door.flac',
     'out_of_ammo': 'outofammo.ogg',
-    'shotgun': 'shotgun_reload.wav'
+    'shotgun': 'shotgun_reload.wav',
+    'coins' : 'coins_collect.wav'
 }
 SOUND_EFFECTS_EMPTY = {
     'heal': '',

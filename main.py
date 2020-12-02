@@ -62,9 +62,6 @@ class Game:
         self.zombie_moan_sounds = []
         self.zombie_pain_sounds = []
         self.zombie_die_sounds = []
-        # self.zombie_moan_sounds_copy = []
-        # self.zombie_pain_sounds_copy = []
-        # self.zombie_die_sounds_copy = []
         self.locked_door_sound = None
         self.dim_screen = pg.Surface(self.board.surface.get_size())
         self.lives_img = None
@@ -122,23 +119,33 @@ class Game:
         self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
 
     def load_sounds(self):
-        if global_variables.is_mute == False :
-            for sound in SOUND_EFFECTS:
-                self.sound_effects[sound] = pg.mixer.Sound(path.join(self.sounds_folder, SOUND_EFFECTS[sound]))
-            for weapon in WEAPON_SOUNDS:
-                self.weapon_sounds[weapon] = []
-                self._add_sounds(WEAPON_SOUNDS[weapon], self.weapon_sounds[weapon], 0.3)
+        
+        # if global_variables.is_mute == False:
+            # print('False')
+            # global_variables.game_music.music.unpause()
+        for sound in SOUND_EFFECTS:
+            self.sound_effects[sound] = pg.mixer.Sound(path.join(self.sounds_folder, SOUND_EFFECTS[sound]))
+        for weapon in WEAPON_SOUNDS:
+            self.weapon_sounds[weapon] = []
+            self._add_sounds(WEAPON_SOUNDS[weapon], self.weapon_sounds[weapon], 0.3)
 
-            self._add_sounds(ZOMBIE_MOAN_SOUNDS, self.zombie_moan_sounds, 0.4)
-            self._add_sounds(ZOMBIE_PAIN_SOUNDS, self.zombie_pain_sounds, 0.5)
-            self._add_sounds(ZOMBIE_DIE_SOUNDS, self.zombie_die_sounds, 0.8)
-        else :
-            for sound in SOUND_EFFECTS:
-                self.sound_effects[sound] = ''
+        self._add_sounds(ZOMBIE_MOAN_SOUNDS, self.zombie_moan_sounds, 0.4)
+        self._add_sounds(ZOMBIE_PAIN_SOUNDS, self.zombie_pain_sounds, 0.5)
+        self._add_sounds(ZOMBIE_DIE_SOUNDS, self.zombie_die_sounds, 0.8)
+        
+        if global_variables.is_mute == True:
+            global_variables.game_music.music.pause()
+        else:
+            global_variables.game_music.music.unpause()
+        # else :
+            # global_variables.game_music.music.pause()
+            # print('True')
+            # for sound in SOUND_EFFECTS:
+                # self.sound_effects[sound] = ''
                 # self.sound_effects[sound] = pg.mixer.Sound(path.join(self.sounds_folder, SOUND_EFFECTS[sound]))
-            for weapon in WEAPON_SOUNDS:
-                self.weapon_sounds[weapon] = []
-                self._add_sounds(WEAPON_SOUNDS_EMPTY[weapon], self.weapon_sounds[weapon], 0.3)
+            # for weapon in WEAPON_SOUNDS:
+                # self.weapon_sounds[weapon] = []
+                # self._add_sounds(WEAPON_SOUNDS_EMPTY[weapon], self.weapon_sounds[weapon], 0.3)
 
 
 
@@ -149,9 +156,11 @@ class Game:
             #     self.weapon_sounds[weapon] = []
 
                 # self._add_sounds(WEAPON_SOUNDS[weapon], self.weapon_sounds[weapon], 0.3)
-            self._add_sounds(ZOMBIE_MOAN_SOUNDS_EMPTY, self.zombie_moan_sounds, 0.4)
-            self._add_sounds(ZOMBIE_PAIN_SOUNDS_EMPTY, self.zombie_pain_sounds, 0.5)
-            self._add_sounds(ZOMBIE_DIE_SOUNDS_EMPTY, self.zombie_die_sounds, 0.8)
+            # self._add_sounds(ZOMBIE_MOAN_SOUNDS_EMPTY, self.zombie_moan_sounds, 0.4)
+            # self._add_sounds(ZOMBIE_PAIN_SOUNDS_EMPTY, self.zombie_pain_sounds, 0.5)
+            # self._add_sounds(ZOMBIE_DIE_SOUNDS_EMPTY, self.zombie_die_sounds, 0.8)
+        
+        # print('length ',len(self.sound_effects))
         # print('moan',self.zombie_moan_sounds)
 
         # self._add_sounds(PLAYER_DEATH_SOUNDS, self.player_die_sounds, 0.6)
@@ -287,7 +296,8 @@ class Game:
             hit.vel = vector(0, 0)
             get_hit(hit)
             if random() < 0.7:
-                if len(self.zombie_pain_sounds) > 0:
+                if global_variables.is_mute == False:
+                # if len(self.zombie_pain_sounds) > 0:
                     choice(self.zombie_pain_sounds).play()
 
     def _destroy_locked_door(self):
@@ -302,8 +312,9 @@ class Game:
                 busy = pg.mixer.get_busy()
                 if busy:
                     pg.mixer.stop()
-                    print(self.sound_effects['broken_door'])
-                    if self.sound_effects['broken_door'] != '':
+                    # print(self.sound_effects['broken_door'])
+                    if global_variables.is_mute == False:
+                    # if self.sound_effects['broken_door'] != '':
                         self.sound_effects['broken_door'].play()
                     self.destroyed = True
 
@@ -340,21 +351,30 @@ class Game:
                 self.playing = False
                 self.menu.game_over(self.score_list, 'Congrats!!!')
             if hit.type == 'coins':
+                if global_variables.is_mute == False:
+                    self.sound_effects['coins'].play()
+                    # global_variables.game_music.init() 
+                    # global_variables.game_music.music.load("sounds/coins_collect.wav") 
+                    # global_variables.game_music.music.set_volume(0.4)   
+                    # global_variables.game_music.music.play() 
+
                 self.coins += 1
                 # print(self.coins)
                 hit.kill()
             
 
     def get_bonus(self, bonus=None):
-        if self.sound_effects['heal'] != '':
+        if global_variables.is_mute == False:
+        # if self.sound_effects['heal'] != '':
             self.sound_effects['heal'].play()
         self.player.bonus = bonus
         return True
 
     def get_ammo(self, hit, pack):
         hit.kill()
-        print(self.sound_effects['pistol'])
-        if self.sound_effects['pistol'] != '' :
+        # print(self.sound_effects['pistol'])
+        if global_variables.is_mute == False:
+        # if self.sound_effects['pistol'] != '' :
             self.sound_effects['pistol'].play()
         for weapon in WEAPONS.keys():
             if weapon in self.player.all_weapons:
@@ -375,13 +395,15 @@ class Game:
 
     def get_health(self, hit, pack):
         hit.kill()
-        if self.sound_effects['heal'] != '':
+        if global_variables.is_mute == False:
+        # if self.sound_effects['heal'] != '':
             self.sound_effects['heal'].play()
         self.player.add_shield(pack)
 
     def get_weapon(self, hit, weapon):
         hit.kill()
-        if self.sound_effects[weapon] != '':
+        if global_variables.is_mute == False:
+        # if self.sound_effects[weapon] != '':
             self.sound_effects[weapon].play()
         self.player.weapon = weapon
         self.player.all_weapons.append(weapon)
@@ -391,17 +413,23 @@ class Game:
         keys = pg.key.get_pressed()
         hits = pg.sprite.spritecollide(self.player, self.locked_rooms, False)
         if not keys[pg.K_SPACE] and hits:
-            if self.sound_effects['locked_door'] != '':
+            if global_variables.is_mute == False:
+            # if self.sound_effects['locked_door'] != '':
                 self.sound_effects['locked_door'].play()
 
     def handle_events(self):
         self.player.update()
         for event in pg.event.get():
+            # print(event.type)
             if event.type == pg.QUIT:
                 quit_game()
             elif event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     quit_game()
+                if event.key == pg.K_m:
+                    print('came here')
+                    global_variables.is_mute = not global_variables.is_mute
+                    self.load_sounds()
                 if event.key == pg.K_p:
                     self.game_paused = not self.game_paused
                 if 50 < self.player.rect.x < 102 and 1735 < self.player.rect.y < 1753:

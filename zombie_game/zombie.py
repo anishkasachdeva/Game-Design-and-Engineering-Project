@@ -5,6 +5,8 @@ from zombie_game.functions import collide_with_object
 from zombie_game.settings import *
 from zombie_game.smoke import Smoke
 
+import global_variables
+
 
 class Zombie(pg.sprite.Sprite):
 
@@ -57,7 +59,8 @@ class Zombie(pg.sprite.Sprite):
     def die(self):
         size = randint(70, 120)
         Smoke(self.game, self.rect.center, self.game.zombie_death_smoke, size)
-        if len(self.game.zombie_die_sounds) > 0 :
+        if global_variables.is_mute == False:
+        # if len(self.game.zombie_die_sounds) > 0 :
             choice(self.game.zombie_die_sounds).play()
         self.kill()
         self.game.map_img.blit(choice(self.game.splats), self.position - vector(32, 32))
@@ -76,7 +79,8 @@ class Zombie(pg.sprite.Sprite):
 
     def _update_zombie_moan_sounds(self):
         if random() < 0.002:
-            if len(self.game.zombie_moan_sounds) > 0 :
+            if global_variables.is_mute == False:
+            # if len(self.game.zombie_moan_sounds) > 0 :
                 choice(self.game.zombie_moan_sounds).play()
 
     def _update_damage(self):

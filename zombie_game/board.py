@@ -17,6 +17,7 @@ class Board:
         self.difficulty_font = pg.font.Font(my_font, 70)
         self.about_font = pg.font.Font(my_font, 20)
         self.game_over_font = pg.font.Font(my_font, 120)
+        self.mute_font = pg.font.Font(my_font,30)
 
     def draw_menu(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
@@ -156,7 +157,8 @@ class Board:
         return self.surface.blit(text, rect)
 
     def draw_pause(self):
-        self.draw_text(self.surface, "Paused", self.width / 2, self.height / 2, self.title_font)
+        self.draw_text(self.surface, "Paused", self.width / 2, self.height / 3, self.title_font)
+        self.draw_text(self.surface, "Press 'm' to Mute or Unmute", self.width / 2, self.height / 2, self.mute_font)
 
     def draw_zombies_left(self, left: int):
         self.draw_text(self.surface, "Zombies: {}".format(left), self.width - 100, 25, self.bonus_font)
