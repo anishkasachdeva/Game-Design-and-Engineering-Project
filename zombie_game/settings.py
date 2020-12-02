@@ -17,7 +17,7 @@ MENU_FONT_COLOR = (255, 140, 0)
 BAR_LENGTH = 100
 BAR_HEIGHT = 20
 
-NIGHT_COLOR = (20, 20, 20)
+NIGHT_COLOR = (15, 15, 15)
 LIGHT_RADIUS = (500, 500)
 LIGHT_MASK = 'light_med.png'
 MINIMAP_WIDTH = 200
@@ -133,7 +133,7 @@ BIG_HEALTH_PACK = PLAYER_SHIELD * 0.5
 MINI_HEALTH_PACK = PLAYER_SHIELD * 0.3
 ITEM_SIZE = 40
 ITEM_IMAGES = {
-    'health': 'genericItem_color_102.png',
+    'health': 'first_aid1.png',
     'mini_health': 'genericItem_color_100.png',
     'water': 'genericItem_color_118.png',
     'beer': 'genericItem_color_119.png',
@@ -141,7 +141,7 @@ ITEM_IMAGES = {
     'id_card': 'genericItem_color_151.png',
     'key': 'genericItem_color_155.png',
     'money': 'genericItem_color_158.png',
-    'ammo_small': 'ammo_small.png',
+    'ammo_small': 'bullets1.png',
     'ammo_big': 'ammo_big.png',
     'pistol': 'pistol.png',
     'shotgun': 'shotgun.png',
@@ -190,18 +190,29 @@ SOUND_EFFECTS = {
     'out_of_ammo': 'outofammo.ogg',
     'shotgun': 'shotgun_reload.wav'
 }
-PLAYER_PAIN_SOUNDS = [
-    'pain1.wav',
-    'pain2.wav',
-    'pain3.wav',
-    'pain4.wav',
-    'pain5.wav',
-    'pain6.wav'
-]
-PLAYER_DEATH_SOUNDS = [
-    'die1.wav',
-    'die2.wav'
-]
+SOUND_EFFECTS_EMPTY = {
+    'heal': '',
+    'heal_mini': '',
+    'pistol': '',
+    'uzi': '',
+    'rifle': '',
+    'locked_door': '',
+    'broken_door': '',
+    'out_of_ammo': '',
+    'shotgun': ''
+}
+# PLAYER_PAIN_SOUNDS = [
+#     'pain1.wav',
+#     'pain2.wav',
+#     'pain3.wav',
+#     'pain4.wav',
+#     'pain5.wav',
+#     'pain6.wav'
+# ]
+# PLAYER_DEATH_SOUNDS = [
+#     'die1.wav',
+#     'die2.wav'
+# ]
 ZOMBIE_MOAN_SOUNDS = [
     'zombie-1.wav',
     'zombie-2.wav',
@@ -220,6 +231,11 @@ ZOMBIE_PAIN_SOUNDS = [
 ZOMBIE_DIE_SOUNDS = [
     'zombie_die.wav'
 ]
+
+ZOMBIE_MOAN_SOUNDS_EMPTY = []
+ZOMBIE_PAIN_SOUNDS_EMPTY = []
+ZOMBIE_DIE_SOUNDS_EMPTY = []
+
 WEAPON_SOUNDS = {
     'pistol': [
         'pistol.ogg',
@@ -241,4 +257,11 @@ WEAPON_SOUNDS = {
         'pistol2.ogg',
         'pistol3.ogg'
     ]
+}
+
+WEAPON_SOUNDS_EMPTY = {
+    'pistol': [],
+    'shotgun' : [],
+    'rifle' : [],
+    'uzi' : []
 }

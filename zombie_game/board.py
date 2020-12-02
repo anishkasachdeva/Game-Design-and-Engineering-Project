@@ -76,9 +76,9 @@ class Board:
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         # self.draw_text(self.surface, "The Curse Of Aegis", self.width / 2, self.height * 0.3, self.title_font)
-        self.draw_text(self.surface, "Decrease Volume", self.width / 2, self.height * 0.6, self.menu_font)
-        self.draw_text(self.surface, "Mute", self.width / 2, self.height * 0.7, self.menu_font)
-        self.draw_text(self.surface, "--------", self.width / 2, self.height * 0.8, self.menu_font)
+        self.draw_text(self.surface, "Mute", self.width / 2, self.height * 0.6, self.menu_font)
+        self.draw_text(self.surface, "Unmute", self.width / 2, self.height * 0.7, self.menu_font)
+        self.draw_text(self.surface, "------", self.width / 2, self.height * 0.8, self.menu_font)
         self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.9, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
@@ -123,7 +123,8 @@ class Board:
         background = (0, 0, 0)
         self.surface.fill(background)
         self.draw_text(self.surface, message, self.width / 2, self.height * 0.2, self.game_over_font)
-        self.draw_text(self.surface, "Players with the best accuracy:", self.width / 2, self.height * 0.4, self.menu_font)
+        self.draw_text(self.surface, "Players with the best scores :", self.width / 2, self.height * 0.4, self.menu_font)
+        self.draw_text(self.surface, "Press 'q' to go to Main Screen:", self.width / 2, self.height * 0.9, self.menu_font)
         pos = 0.5
         for player in scoreboard:
             self.draw_text(self.surface, player[0], self.width / 3, self.height * pos, self.bonus_font)
@@ -138,8 +139,8 @@ class Board:
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         self.draw_text(self.surface, "Easy", self.width / 2, self.height * 0.2, self.difficulty_font)
         self.draw_text(self.surface, "Normal", self.width / 2, self.height * 0.4, self.difficulty_font)
-        self.draw_text(self.surface, "Hard", self.width / 2, self.height * 0.6, self.difficulty_font)
-        self.draw_text(self.surface, "Zombie hell!", self.width / 2, self.height * 0.8, self.difficulty_font)
+        self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.6, self.difficulty_font)
+        # self.draw_text(self.surface, "Zombie hell!", self.width / 2, self.height * 0.8, self.difficulty_font)
         for drawable in args:
             drawable.draw_on(self.surface)
 

@@ -81,9 +81,26 @@ class Menu:
         self.set_mob_limit(0.1, 337, 480, INTRO_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_options, 40)
         # self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_audio_controls, self.game_intro)
         if 330 < self.pos_y < 350:
-            self.game_intro()
+            global_variables.is_mute = True
+            global_variables.game_music.music.pause()
+            # self.game.zombie_moan_sounds = [];
+            # self.game.zombie_pain_sounds = [];
+            # self.game.zombie_die_sounds = [];
+            # print(self.game.zombie_moan_sounds)
+            # print(self.game.zombie_pain_sounds)
+            # print(self.game.zombie_die_sounds)
+
+            # self.game_intro()
         elif 350 < self.pos_y < 400:
-            global_variables.game_music.music.stop()
+            global_variables.game_music.music.unpause()
+            global_variables.is_mute = False
+            # self.game.zombie_moan_sounds = global_variables.zombie_moan_sounds_copy;
+            # self.game.zombie_pain_sounds = global_variables.zombie_pain_sounds_copy;
+            # self.game.zombie_die_sounds = global_variables.zombie_die_sounds_copy;
+            # choice(self.zombie_pain_sounds).stop()
+            # choice(self.zombie_pain_sounds).stop()
+            # choice(self.zombie_pain_sounds).stop()
+
             self.game_intro()
         else:
             print('nothing')
@@ -126,9 +143,9 @@ class Menu:
         elif 215 < self.pos_y < 217:
             difficult = "normal"
         elif 335 < self.pos_y < 337:
-            difficult = "hard"
-        else:
-            difficult = "hell"
+            self.game_intro()
+        # else:
+            # difficult = "hell"
         self.game_input(difficult)
 
     def game_input(self, difficult):
@@ -157,7 +174,7 @@ class Menu:
                 if event.type == pg.QUIT:
                     quit_game()
                 elif event.type == pg.KEYDOWN:
-                    if event.key == pg.K_SPACE or event.key == pg.K_RETURN:
+                    if event.key == pg.K_q or event.key == pg.K_RETURN:
                         self.game_intro()
 
     def set_mob_limit(self, i_value, top, bottom, pos, draw, previous, size=50):

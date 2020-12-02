@@ -88,7 +88,8 @@ class Player(pg.sprite.Sprite):
                 if self.ammo[self.weapon] > 0:
                     self.shoot()
                 else:
-                    self.game.sound_effects['out_of_ammo'].play()
+                    if self.game.sound_effects['out_of_ammo'] != '':
+                        self.game.sound_effects['out_of_ammo'].play()
         if keys[pg.K_1]:
             self.weapon = None
         if keys[pg.K_2]:
@@ -137,7 +138,8 @@ class Player(pg.sprite.Sprite):
                 if self.ammo[self.weapon] > 0:
                     self.shoot()
                 else:
-                    self.game.sound_effects['out_of_ammo'].play()
+                    if self.game.sound_effects['out_of_ammo'] != '':
+                        self.game.sound_effects['out_of_ammo'].play()
         if keys[pg.K_1]:
             self.weapon = None
         if keys[pg.K_2]:
@@ -155,7 +157,8 @@ class Player(pg.sprite.Sprite):
 
 
     def select_weapon(self, weapon):
-        self.game.sound_effects[weapon].play()
+        if self.game.sound_effects[weapon] != '':
+            self.game.sound_effects[weapon].play()
         self.weapon = weapon
 
     def shoot(self):
@@ -199,10 +202,11 @@ class Player(pg.sprite.Sprite):
             self._run_weapon_sound()
 
     def _run_weapon_sound(self):
-        sound = choice(self.game.weapon_sounds[self.weapon])
-        if sound.get_num_channels() > 2:
-            sound.stop()
-        sound.play()
+        if len(self.game.weapon_sounds[self.weapon]) > 0: 
+            sound = choice(self.game.weapon_sounds[self.weapon])
+            if sound.get_num_channels() > 2:
+                sound.stop()
+            sound.play()
 
     def _create_smoke(self, position):
         size = randint(20, 50)
