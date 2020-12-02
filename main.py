@@ -252,6 +252,7 @@ class Game:
         for hit in hits:
             if hit.type == 'coffee':
                 hit.kill()
+                self.player.total_accuracy += 5
                 self.player.speed = 300
                 self.player.cur_time = int(round(time.time())) + 15
             if hit.type == 'water':
@@ -347,6 +348,7 @@ class Game:
                 hit.kill()
                 self.player.money = True
             if hit.type == 'fuel_bottle':
+                self.player.total_accuracy += 50
                 self.update_scoreboard(self.player.total_accuracy)
                 self.playing = False
                 self.menu.game_over(self.score_list, 'Congrats!!!')
@@ -359,6 +361,7 @@ class Game:
                     # global_variables.game_music.music.play() 
 
                 self.coins += 1
+                self.player.total_accuracy += 5
                 # print(self.coins)
                 hit.kill()
             
@@ -427,7 +430,7 @@ class Game:
                 if event.key == pg.K_ESCAPE:
                     quit_game()
                 if event.key == pg.K_m:
-                    print('came here')
+                    # print('came here')
                     global_variables.is_mute = not global_variables.is_mute
                     self.load_sounds()
                 if event.key == pg.K_p:
@@ -473,7 +476,7 @@ class Game:
             self.render_fog()
         draw_player_health(self.board.surface, 20, 10, self.player.shield / PLAYER_SHIELD)
         self.board.draw_zombies_left(len(self.zombies))
-        self.board.draw_coins_collected(self.coins)
+        self.board.draw_coins_collected(self.player.total_accuracy)
         self.board.draw_adds(self.board.surface, 150, 10, self.lives_img, self.player.lives)
         self.board.draw_adds(self.board.surface, self.width-340, self.height-160, self.mini_map)
         # if self.player.has_key:

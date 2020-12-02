@@ -181,7 +181,7 @@
 </data>
  </layer> -->
  <objectgroup id="3" name="Obstacles">
-  <object id="2" name="player" x="70" y="70" width="64" height="58"/>
+  <object id="2" name="player" x="250" y="70" width="64" height="58"/>
   <!-- <object id="3" name="zombie" x="781" y="119" width="64" height="58"/>
   <object id="4" name="zombie" x="917" y="209" width="64" height="58"/>
   <object id="5" name="zombie" x="771" y="438" width="64" height="58"/>

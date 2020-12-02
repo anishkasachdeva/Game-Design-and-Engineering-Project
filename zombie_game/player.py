@@ -202,7 +202,7 @@ class Player(pg.sprite.Sprite):
             spread = uniform(-WEAPONS[self.weapon]['spread'], WEAPONS[self.weapon]['spread'])
             Bullet(self.game, position, direction.rotate(spread))
             self.total_bullets += 1
-            self.total_accuracy = round((self.accurate_shot / self.total_bullets) * 100, 2)
+            # self.total_accuracy = round((self.accurate_shot / self.total_bullets) * 100, 2)
             self._run_weapon_sound()
 
     def _run_weapon_sound(self):

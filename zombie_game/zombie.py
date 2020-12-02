@@ -57,6 +57,7 @@ class Zombie(pg.sprite.Sprite):
             self.die()
 
     def die(self):
+        self.game.player.total_accuracy += 10
         size = randint(70, 120)
         Smoke(self.game, self.rect.center, self.game.zombie_death_smoke, size)
         if global_variables.is_mute == False:
