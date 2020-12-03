@@ -27,7 +27,7 @@ class Board:
         self.draw_text(self.surface, "About", self.width / 2, self.height * 0.5, self.menu_font)
         self.draw_text(self.surface, "Rules", self.width / 2, self.height * 0.6, self.menu_font)
         self.draw_text(self.surface, "Ranking", self.width / 2, self.height * 0.7, self.menu_font)
-        self.draw_text(self.surface, "Options", self.width / 2, self.height * 0.8, self.menu_font)
+        self.draw_text(self.surface, "Settings", self.width / 2, self.height * 0.8, self.menu_font)
         self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.9, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
@@ -45,6 +45,7 @@ class Board:
         self.draw_text(self.surface, "6. Searching the fuel bottle is the end task." , self.width/2-80, self.height * 0.50, self.about_font)
         self.draw_text(self.surface, "7. Press 'p' to pause the game." , self.width/2-159, self.height * 0.55, self.about_font)
         self.draw_text(self.surface, "8. Press 'm' to mute and unmute the game." , self.width/2-90, self.height * 0.60, self.about_font)
+        self.draw_text(self.surface, "9. Use '1', '2', '3' or '4' to change the guns." , self.width/2-100, self.height * 0.65, self.about_font)
         self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
