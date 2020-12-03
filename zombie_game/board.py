@@ -115,25 +115,12 @@ class Board:
         pg.display.update()
         pass
 #-----------------------------------------------------------------------------------------------------------------------------------------
-
-
-    # def draw_choose_character(self, *args):
-    #     self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
-    #     self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-    #     self.draw_text(self.surface, "Choose your character:", self.width / 2, self.height * 0.2, self.difficulty_font)
-    #     self.draw_text(self.surface, "Hitman", self.width / 2, self.height * 0.5, self.options_font)
-    #     self.draw_text(self.surface, "Girl", self.width / 2, self.height * 0.65, self.options_font)
-    #     self.draw_text(self.surface, "Soldier", self.width / 2, self.height * 0.8, self.options_font)
-    #     for drawable in args:
-    #         drawable.draw_on(self.surface)
-    #     pg.display.update()
-
     def draw_game_over(self, scoreboard: list, message: str, *args):
         background = (0, 0, 0)
         self.surface.fill(background)
         self.draw_text(self.surface, message, self.width / 2, self.height * 0.2, self.game_over_font)
         self.draw_text(self.surface, "Players with the best scores :", self.width / 2, self.height * 0.4, self.menu_font)
-        self.draw_text(self.surface, "Press 'q' to go to Main Screen:", self.width / 2, self.height * 0.9, self.menu_font)
+        self.draw_text(self.surface, "Press 'q' to go to Main Screen", self.width / 2, self.height * 0.9, self.menu_font)
         pos = 0.5
         for player in scoreboard:
             self.draw_text(self.surface, player[0], self.width / 3, self.height * pos, self.bonus_font)

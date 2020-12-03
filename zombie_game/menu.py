@@ -3,6 +3,7 @@ from os import path
 from zombie_game.drawable import Drawable
 from zombie_game.functions import quit_game
 from zombie_game.settings import *
+# import main
 
 import global_variables
 
@@ -27,6 +28,7 @@ class Menu:
 
     def __init__(self, game):
         self.game = game
+        # self.game_copy = game
         self.pos_x = 0
         self.pos_y = 0
         self.i = 0
@@ -138,7 +140,7 @@ class Menu:
                     quit_game()
                 elif event.type == pg.KEYDOWN:
                     if event.key == pg.K_q or event.key == pg.K_RETURN:
-                        self.game_intro()
+                        self.game.menu.game_intro()
 
     def set_mob_limit(self, i_value, top, bottom, pos, draw, previous, size=50):
         while True:
