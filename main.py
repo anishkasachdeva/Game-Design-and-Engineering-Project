@@ -494,6 +494,10 @@ class Game:
             self.board.draw_money()
 
     def render_fog(self):
+        if int(round(time.time()))%5==0:
+            NIGHT_COLOR = (25,25,25)
+        else:
+            NIGHT_COLOR = (8,8,8)
         self.fog.fill(NIGHT_COLOR)
         self.light_rect.center = self.camera.apply(self.player).center
         self.fog.blit(self.light_mask, self.light_rect)
