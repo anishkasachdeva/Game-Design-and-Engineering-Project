@@ -710,6 +710,11 @@
   <object id="153" name="zombie" x="1200" y="2000" width="64" height="58"/>
   <object id="153" name="zombie" x="3350" y="2000" width="64" height="58"/>
   <object id="153" name="zombie" x="1200" y="1200" width="64" height="58"/>
+
+  <object id="153" name="zombie" x="450" y="1980" width="64" height="58"/>
+  <object id="153" name="zombie" x="1000" y="1950" width="64" height="58"/>
+  <object id="153" name="zombie" x="2350" y="1999" width="64" height="58"/>
+  <!-- <object id="153" name="zombie" x="1200" y="1200" width="64" height="58"/> -->
   
   <object id="153" name="coins" x="670" y="110" width="64" height="64"/>
   <object id="153" name="coins" x="690" y="110" width="64" height="64"/>

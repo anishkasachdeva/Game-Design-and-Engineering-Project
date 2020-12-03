@@ -34,15 +34,17 @@ class Menu:
         self.i = 0
 
     def game_intro(self):
-        self.i = 0.46
-        self.set_mob_limit(0.1, 325, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
-        if 200 < self.pos_y < 335:
+        self.i = 0.36
+        self.set_mob_limit(0.1, 220, 480, INTRO_SPRITE_POS_X, self.game.board.draw_menu, self.game_options, 40)
+        if 100 < self.pos_y < 220:
             self.game_choosing_difficulty()
-        elif 335 < self.pos_y < 337:
+        elif 220 < self.pos_y < 300:
             self.game_about()
-        elif 385 < self.pos_y < 397:
+        elif 320 < self.pos_y < 357:
+            self.game_rules()
+        elif 385 < self.pos_y < 420:
             self.game_scoreboard()
-        elif 455 < self.pos_y < 457:
+        elif 450 < self.pos_y < 467:
             self.game_options()
         else:
             quit_game()
@@ -84,20 +86,20 @@ class Menu:
     def game_about(self):
         self.i = 0.75
         self.set_mob_limit(0.1, 450, 450, INTRO_SPRITE_POS_X, self.game.board.draw_about, self.game_intro)
-        if 450 < self.pos_y < 450:
+        if 100 < self.pos_y < 450:
             self.game_intro()
     
     def game_rules(self):
         self.i = 0.75
-        self.set_mob_limit(0.1, 450, 450, INTRO_SPRITE_POS_X, self.game.board.draw_rules, self.game_intro)
+        self.set_mob_limit(0.15, 450, 450, INTRO_SPRITE_POS_X, self.game.board.draw_rules, self.game_intro)
         if 450 < self.pos_y < 450:
             self.game_intro()
 #-----------------------------------------------------------------------------------------------------------------------------------------
 
     def game_scoreboard(self):
-        self.i = 0.31
-        self.set_mob_limit(0.15, 196, 150, OPTIONS_SPRITE_POS_X, self.game.board.draw_scoreboard, self.game_intro)
-        if 185 < self.pos_y < 187:
+        self.i = 0.75
+        self.set_mob_limit(0.15, 450, 450, OPTIONS_SPRITE_POS_X, self.game.board.draw_scoreboard, self.game_intro)
+        if 450 < self.pos_y < 450:
             self.game_intro()
 
     def game_choosing_difficulty(self):
@@ -105,13 +107,14 @@ class Menu:
         self.set_mob_limit(0.2, 97, 300, OPTIONS_SPRITE_POS_X, self.game.board.draw_choosing_difficulty, self.game_intro)
         if 95 < self.pos_y < 97:
             difficult = "easy"
+            self.game_input(difficult)
         elif 215 < self.pos_y < 217:
             difficult = "hell"
-        elif 335 < self.pos_y < 337:
+            self.game_input(difficult)
+        elif 335 < self.pos_y < 437:
             self.game_intro()
         # else:
             # difficult = "hell"
-        self.game_input(difficult)
 
     def game_input(self, difficult):
         word = ""
