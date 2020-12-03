@@ -423,14 +423,12 @@ class Game:
     def handle_events(self):
         self.player.update()
         for event in pg.event.get():
-            # print(event.type)
             if event.type == pg.QUIT:
                 quit_game()
             elif event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     quit_game()
                 if event.key == pg.K_m:
-                    # print('came here')
                     global_variables.is_mute = not global_variables.is_mute
                     self.load_sounds()
                 if event.key == pg.K_p:

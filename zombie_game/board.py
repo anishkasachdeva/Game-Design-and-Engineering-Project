@@ -13,7 +13,7 @@ class Board:
         self.menu_font = pg.font.Font(my_font, 45)
         self.bonus_font = pg.font.Font(my_font, 30)
         self.options_font = pg.font.Font(my_font, 65)
-        self.title_font = pg.font.Font(my_font, 90)
+        self.title_font = pg.font.Font(my_font, 85)
         self.difficulty_font = pg.font.Font(my_font, 70)
         self.about_font = pg.font.Font(my_font, 20)
         self.game_over_font = pg.font.Font(my_font, 120)
@@ -25,12 +25,24 @@ class Board:
         self.draw_text(self.surface, "The Curse Of Aegis", self.width / 2, self.height * 0.3, self.title_font)
         self.draw_text(self.surface, "Play", self.width / 2, self.height * 0.5, self.menu_font)
         self.draw_text(self.surface, "About", self.width / 2, self.height * 0.6, self.menu_font)
+        # self.draw_text(self.surface, "Rules", self.width / 2, self.height * 0.6, self.menu_font)
         self.draw_text(self.surface, "Ranking", self.width / 2, self.height * 0.7, self.menu_font)
         self.draw_text(self.surface, "Options", self.width / 2, self.height * 0.8, self.menu_font)
         self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.9, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
+
+    def draw_rules(self, *args):
+        self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
+        self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
+        self.draw_text(self.surface, "Rules:", self.width / 2, self.height * 0.1, self.difficulty_font)
+        self.draw_text(self.surface, "1. Search for 3 keys in the whole map to open the door." , self.width/2, self.height * 0.25, self.about_font)
+        self.draw_text(self.surface, "2. Collect coins to score more." , self.width/2, self.height * 0.30, self.about_font)
+        self.draw_text(self.surface, "3. Fight with the spirits." , self.width/2, self.height * 0.35, self.about_font)
+        self.draw_text(self.surface, "4. Collect first-aid boxes to restore your energy." , self.width/2, self.height * 0.40, self.about_font)
+        self.draw_text(self.surface, "5. Collect speedups to double your speed for 15 seconds." , self.width/2, self.height * 0.45, self.about_font)
+        self.draw_text(self.surface, "6. Searching the fuel bottle is the end task." , self.width/2, self.height * 0.50, self.about_font)
 
     def draw_options(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
@@ -63,11 +75,9 @@ class Board:
     def draw_game_controls(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        # self.draw_text(self.surface, "The Curse Of Aegis", self.width / 2, self.height * 0.3, self.title_font)
         self.draw_text(self.surface, "Arrows", self.width / 2, self.height * 0.6, self.menu_font)
         self.draw_text(self.surface, "Alphabets", self.width / 2, self.height * 0.7, self.menu_font)
-        self.draw_text(self.surface, "-----", self.width / 2, self.height * 0.8, self.menu_font)
-        self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.9, self.menu_font)
+        self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
@@ -76,11 +86,9 @@ class Board:
     def draw_audio_controls(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        # self.draw_text(self.surface, "The Curse Of Aegis", self.width / 2, self.height * 0.3, self.title_font)
         self.draw_text(self.surface, "Mute", self.width / 2, self.height * 0.6, self.menu_font)
         self.draw_text(self.surface, "Unmute", self.width / 2, self.height * 0.7, self.menu_font)
-        self.draw_text(self.surface, "------", self.width / 2, self.height * 0.8, self.menu_font)
-        self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.9, self.menu_font)
+        self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
@@ -109,16 +117,16 @@ class Board:
 #-----------------------------------------------------------------------------------------------------------------------------------------
 
 
-    def draw_choose_character(self, *args):
-        self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
-        self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        self.draw_text(self.surface, "Choose your character:", self.width / 2, self.height * 0.2, self.difficulty_font)
-        self.draw_text(self.surface, "Hitman", self.width / 2, self.height * 0.5, self.options_font)
-        self.draw_text(self.surface, "Girl", self.width / 2, self.height * 0.65, self.options_font)
-        self.draw_text(self.surface, "Soldier", self.width / 2, self.height * 0.8, self.options_font)
-        for drawable in args:
-            drawable.draw_on(self.surface)
-        pg.display.update()
+    # def draw_choose_character(self, *args):
+    #     self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
+    #     self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
+    #     self.draw_text(self.surface, "Choose your character:", self.width / 2, self.height * 0.2, self.difficulty_font)
+    #     self.draw_text(self.surface, "Hitman", self.width / 2, self.height * 0.5, self.options_font)
+    #     self.draw_text(self.surface, "Girl", self.width / 2, self.height * 0.65, self.options_font)
+    #     self.draw_text(self.surface, "Soldier", self.width / 2, self.height * 0.8, self.options_font)
+    #     for drawable in args:
+    #         drawable.draw_on(self.surface)
+    #     pg.display.update()
 
     def draw_game_over(self, scoreboard: list, message: str, *args):
         background = (0, 0, 0)
@@ -139,7 +147,7 @@ class Board:
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         self.draw_text(self.surface, "Easy", self.width / 2, self.height * 0.2, self.difficulty_font)
-        self.draw_text(self.surface, "Normal", self.width / 2, self.height * 0.4, self.difficulty_font)
+        self.draw_text(self.surface, "Hard", self.width / 2, self.height * 0.4, self.difficulty_font)
         self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.6, self.difficulty_font)
         # self.draw_text(self.surface, "Zombie hell!", self.width / 2, self.height * 0.8, self.difficulty_font)
         for drawable in args:
