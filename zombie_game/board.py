@@ -43,6 +43,8 @@ class Board:
         self.draw_text(self.surface, "4. Collect first-aid boxes to restore your energy." , self.width/2-50, self.height * 0.40, self.about_font)
         self.draw_text(self.surface, "5. Collect speedups to double your speed for 15 seconds." , self.width/2, self.height * 0.45, self.about_font)
         self.draw_text(self.surface, "6. Searching the fuel bottle is the end task." , self.width/2-80, self.height * 0.50, self.about_font)
+        self.draw_text(self.surface, "7. Press 'p' to pause the game." , self.width/2-159, self.height * 0.55, self.about_font)
+        self.draw_text(self.surface, "8. Press 'm' to mute and unmute the game." , self.width/2-90, self.height * 0.60, self.about_font)
         self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
@@ -61,7 +63,7 @@ class Board:
     def draw_scoreboard(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        self.draw_text(self.surface, "Scoreboard:", self.width / 2, self.height * 0.2, self.difficulty_font)
+        self.draw_text(self.surface, "Leaderboard:", self.width / 2, self.height * 0.2, self.difficulty_font)
         # self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.35, self.options_font)
         pos = 0.35
         with open(SCOREBOARD) as f:
