@@ -134,7 +134,7 @@ MINI_HEALTH_PACK = PLAYER_SHIELD * 0.3
 ITEM_SIZE = 40
 ITEM_IMAGES = {
     'health': 'first_aid1.png',
-    'mini_health': 'genericItem_color_100.png',
+    'mini_health': 'first_aid1.png',
     'water': 'genericItem_color_118.png',
     'beer': 'genericItem_color_119.png',
     # 'coffee': 'genericItem_color_124.png',
@@ -142,7 +142,7 @@ ITEM_IMAGES = {
     'key': 'genericItem_color_155.png',
     'money': 'genericItem_color_158.png',
     'ammo_small': 'bullets1.png',
-    'ammo_big': 'ammo_big.png',
+    'ammo_big': 'bullets1.png',
     'pistol': 'pistol.png',
     'shotgun': 'shotgun.png',
     'rifle': 'rifle.png',

@@ -90,14 +90,14 @@ class Board:
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         self.draw_text(self.surface, "About:", self.width / 2, self.height * 0.1, self.difficulty_font)
-        self.draw_text(self.surface, "The ship got cursed, and our sailor stuck in an island populated with spirits. To" , self.width/2, self.height * 0.25, self.about_font)
-        self.draw_text(self.surface, "return to his home, the sailor wants ship fuel. In search of ship fuel, he enters" , self.width/2, self.height * 0.30, self.about_font)
-        self.draw_text(self.surface, "a haunted laboratory filled with spirits and searches for the fuel. All the rooms" , self.width/2, self.height * 0.35, self.about_font)
-        self.draw_text(self.surface, "are locked, so he needs to collect keys scattered all over the place and finally" , self.width/2, self.height * 0.40, self.about_font)
-        self.draw_text(self.surface, "find the key to the main room having the fuel. To achieve this, he needs to kill" , self.width/2, self.height * 0.45, self.about_font)
-        self.draw_text(self.surface, "all the spirits in his way because they will get attracted by the sailor and lowers" , self.width/2, self.height * 0.50, self.about_font)
-        self.draw_text(self.surface, "his health. The player needs to help the sailor find the key to the main door and" , self.width/2, self.height * 0.55, self.about_font)
-        self.draw_text(self.surface, "collect the fuel, killing all the spirits." , self.width/2, self.height * 0.60, self.about_font)
+        self.draw_text(self.surface, "The ship named Aegis got cursed, and our sailor stuck is in an island populated with" , self.width/2, self.height * 0.25, self.about_font)
+        self.draw_text(self.surface, "spirits. To return to his home, the sailor needs ship fuel. In search of ship fuel," , self.width/2, self.height * 0.30, self.about_font)
+        self.draw_text(self.surface, "he enters a haunted laboratory filled with spirits and searches for the fuel. He" , self.width/2, self.height * 0.35, self.about_font)
+        self.draw_text(self.surface, "needs to collect 3 keys scattered all over the place to reach the main room having." , self.width/2, self.height * 0.40, self.about_font)
+        self.draw_text(self.surface, "the fuel. To achieve this, he needs to kill the spirits in his way because they will" , self.width/2, self.height * 0.45, self.about_font)
+        self.draw_text(self.surface, "get attracted by the sailor and will lower his health. The player needs to help the" , self.width/2, self.height * 0.50, self.about_font)
+        self.draw_text(self.surface, "sailor find the keys to the main door and collect the fuel to reach back his home." , self.width/2, self.height * 0.55, self.about_font)
+        # self.draw_text(self.surface, "killing all the spirits." , self.width/2, self.height * 0.60, self.about_font)
 
 
         #The ship got cursed, and our sailor stuck in an island populated with spirits. To return to his home, the sailorwants ship fuel. In search of ship fuel, he enters a haunted laboratory filled with spirits and searches for the fuel.  All the rooms are locked, so he needs to collect keys scattered all over the place and finally find the key to the main room having the fuel. To achieve this, he needs to kill all the spirits in his way because they will get attracted by the sailor and lower his health. The player needs to help the sailor find the key to the main door and collect the fuel, killing all the spirits.
