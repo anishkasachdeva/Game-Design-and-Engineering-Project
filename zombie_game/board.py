@@ -164,7 +164,7 @@ class Board:
         self.draw_text(self.surface, "Press 'm' to Mute or Unmute", self.width / 2, self.height / 2, self.mute_font)
 
     def draw_zombies_left(self, left: int):
-        self.draw_text(self.surface, "Zombies: {}".format(left), self.width - 100, 25, self.bonus_font)
+        self.draw_text(self.surface, "Zombies: {}".format(left), self.width - 150, 25, self.bonus_font)
 
     def draw_bonus(self, bonus: str):
         self.draw_text(self.surface, bonus, self.width - 300, 25, self.bonus_font)
@@ -173,7 +173,7 @@ class Board:
         self.draw_text(self.surface, ammo, 400, 25, self.bonus_font)
 
     def draw_coins_collected(self, coins):
-        self.draw_text(self.surface, "Score : {}".format(coins) , 600, 25, self.bonus_font)
+        self.draw_text(self.surface, "Score : {}".format(coins) , 700, 25, self.bonus_font)
 
     def draw_money(self):
         self.draw_text(self.surface, "9 800 zl", self.width - 100, 60, self.bonus_font)

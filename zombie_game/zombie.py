@@ -100,14 +100,14 @@ class Zombie(pg.sprite.Sprite):
         # self.image = pg.transform.rotate(ZOMBIE_IMAGE2, self.rotation)
 
     def _update_position(self):
-        pass
-        # self.rect = self.image.get_rect()
-        # self.rect.center = self.position
-        # self.acc = vector(1, 0).rotate(-self.rotation)
-        # self.acc.scale_to_length(self.speed)
-        # self.acc += self.vel * (-1)
-        # self.vel += self.acc * self.game.dt
-        # self.position += self.vel * self.game.dt + (self.acc * self.game.dt ** 2) / 2
-        # self.hit_rect.centerx = self.position.x
-        # self.hit_rect.centery = self.position.y
-        # self.rect.center = self.hit_rect.center
+        # pass
+        self.rect = self.image.get_rect()
+        self.rect.center = self.position
+        self.acc = vector(1, 0).rotate(-self.rotation)
+        self.acc.scale_to_length(self.speed)
+        self.acc += self.vel * (-1)
+        self.vel += self.acc * self.game.dt
+        self.position += self.vel * self.game.dt + (self.acc * self.game.dt ** 2) / 2
+        self.hit_rect.centerx = self.position.x
+        self.hit_rect.centery = self.position.y
+        self.rect.center = self.hit_rect.center
