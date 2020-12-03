@@ -74,6 +74,7 @@ class Game:
         # self.mini_map_img = None
         self.load_data()
         self.light_rect = self.light_mask.get_rect()
+        
         self.night = True
         self.new()
         self.mini_map = pg.Surface([self.map_rect.width / 15, self.map_rect.height / 15], pg.SRCALPHA, 32)
@@ -116,7 +117,10 @@ class Game:
 
     def load_light_mask(self):
         self.light_mask = pg.image.load(path.join(self.img_folder, LIGHT_MASK))
-        self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
+        if int(round(time.time())) % 5 == 0:
+            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
+        else:
+            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS_2)
 
     def load_sounds(self):
         
@@ -499,6 +503,14 @@ class Game:
         else:
             NIGHT_COLOR = (8,8,8)
         self.fog.fill(NIGHT_COLOR)
+        
+        self.light_mask = pg.image.load(path.join(self.img_folder, LIGHT_MASK))
+        if int(round(time.time())) % 5 == 0:
+            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
+        else:
+            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS_2)
+
+
         self.light_rect.center = self.camera.apply(self.player).center
         self.fog.blit(self.light_mask, self.light_rect)
         self.board.surface.blit(self.fog, (0, 0), special_flags=pg.BLEND_MULT)
