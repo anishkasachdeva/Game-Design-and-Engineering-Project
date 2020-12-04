@@ -195,7 +195,6 @@ class Game:
         self._collide_player_with_bonus()
         self._collide_player_with_spirit()
         self._collide_bullet_with_spirit()
-        self._collide_bullet_with_door()
         if self.player.has_id == 3:
             self._destroy_locked_door()
 
@@ -253,18 +252,6 @@ class Game:
     def _destroy_locked_door(self):
         for i in self.locked_room_card:
             i.kill()
-
-    def _collide_bullet_with_door(self):
-        hits = pg.sprite.groupcollide(self.locked_rooms, self.bullets, False, False)
-        for hit in hits:
-            if not self.destroyed and self.player.rect.centery < 1500:
-                hit.kill()
-                busy = pg.mixer.get_busy()
-                if busy:
-                    pg.mixer.stop()
-                    if global_variables.is_mute == False:
-                        self.sound_effects['broken_door'].play()
-                    self.destroyed = True
 
     def _collide_player_with_items(self):
         hits = pg.sprite.spritecollide(self.player, self.items, False)

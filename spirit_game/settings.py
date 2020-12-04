@@ -187,7 +187,6 @@ SOUND_EFFECTS = {
     'uzi': 'pistol_reload.wav',
     'rifle': 'rifle_pickup.wav',
     'locked_door': 'locked_door.wav',
-    'broken_door': 'broken_door.flac',
     'out_of_ammo': 'outofammo.ogg',
     'shotgun': 'shotgun_reload.wav',
     'coins' : 'coins_collect.wav'
@@ -199,7 +198,6 @@ SOUND_EFFECTS_EMPTY = {
     'uzi': '',
     'rifle': '',
     'locked_door': '',
-    'broken_door': '',
     'out_of_ammo': '',
     'shotgun': ''
 }
