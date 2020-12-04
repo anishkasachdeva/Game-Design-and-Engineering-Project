@@ -117,10 +117,10 @@ class Game:
 
     def load_light_mask(self):
         self.light_mask = pg.image.load(path.join(self.img_folder, LIGHT_MASK))
-        if int(round(time.time())) % 5 == 0:
-            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
-        else:
-            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS_2)
+        # if int(round(time.time())) % 5 == 0:
+        self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
+        # else:
+            # self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS_2)
 
     def load_sounds(self):
         
@@ -504,12 +504,6 @@ class Game:
             NIGHT_COLOR = (8,8,8)
         self.fog.fill(NIGHT_COLOR)
         
-        self.light_mask = pg.image.load(path.join(self.img_folder, LIGHT_MASK))
-        if int(round(time.time())) % 5 == 0:
-            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS)
-        else:
-            self.light_mask = pg.transform.scale(self.light_mask, LIGHT_RADIUS_2)
-
 
         self.light_rect.center = self.camera.apply(self.player).center
         self.fog.blit(self.light_mask, self.light_rect)
@@ -528,14 +522,6 @@ class Game:
 
     def update_mini_map(self):
         pass
-        # self.mini_map.blit(self.mini_map_img, (0, 0))
-        # player_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
-        # player_map_square.fill(BLUE)
-        # self.mini_map.blit(player_map_square, (self.player.rect.x / 15, self.player.rect.y / 15))
-        # for zombie in self.zombies:
-        #     zombie_map_square = pg.Surface([5, 5], pg.SRCALPHA, 32)
-        #     zombie_map_square.fill(RED)
-        #     self.mini_map.blit(zombie_map_square, (zombie.rect.x / 15, zombie.rect.y / 15))
 
     def _set_params_after_bonus(self):
         timer_start = pg.time.get_ticks()
@@ -558,10 +544,5 @@ if __name__ == "__main__":
     global_variables.game_music.music.set_volume(0.4)   
     global_variables.game_music.music.play(-1) 
     while True:
-        # pass
-    # mixer.init()
-    # mixer.music.load("music.mp3")
-    # mixer.music.set_volume(0.7)
-    # mixer.music.play()
         game = Game()
         game.menu.game_intro()
