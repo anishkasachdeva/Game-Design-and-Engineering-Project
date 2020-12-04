@@ -8,13 +8,13 @@ Create virtualenv and install all requirements and run command:
 ## Keyboard Keys
 The game is a solely keyboad based game. Following keys needs to be used:
 
-W or UP arrow key       - To move Forward
-S or DOWN arrow key     - To move Backward
-D or RIGHT arrow key    - To move Right
-A or LEFT arrow ley     - To move Left
-M                       - To mute or unmute the sounds in the game
-P                       - To pause the game
-ESC                     - To quit the game
+#### W or UP arrow key       - To move Forward
+#### S or DOWN arrow key     - To move Backward
+#### D or RIGHT arrow key    - To move Right
+#### A or LEFT arrow ley     - To move Left
+#### M                       - To mute or unmute the sounds in the game
+#### P                       - To pause the game
+#### ESC                     - To quit the game
 
 <!-- ## Screenshots -->
 <!-- ![Alt text](images/readme/screenshot1.png) -->
