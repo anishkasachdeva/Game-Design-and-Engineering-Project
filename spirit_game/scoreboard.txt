@@ -1,5 +1,5 @@
 harshika 315
 e 50
+d 10
 dummy5 0
 dummy4 0
-dummy3 0
