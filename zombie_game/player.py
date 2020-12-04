@@ -89,7 +89,6 @@ class Player(pg.sprite.Sprite):
                     self.shoot()
                 else:
                     if global_variables.is_mute == False:
-                    # if self.game.sound_effects['out_of_ammo'] != '':
                         self.game.sound_effects['out_of_ammo'].play()
         if keys[pg.K_1]:
             self.weapon = None
@@ -141,7 +140,6 @@ class Player(pg.sprite.Sprite):
                 else:
                     if global_variables.is_mute == False:
 
-                    # if self.game.sound_effects['out_of_ammo'] != '':
                         self.game.sound_effects['out_of_ammo'].play()
         if keys[pg.K_1]:
             self.weapon = None
@@ -161,7 +159,6 @@ class Player(pg.sprite.Sprite):
 
     def select_weapon(self, weapon):
         if global_variables.is_mute == False:
-        # if self.game.sound_effects[weapon] != '':
             self.game.sound_effects[weapon].play()
         self.weapon = weapon
 
@@ -202,7 +199,6 @@ class Player(pg.sprite.Sprite):
             spread = uniform(-WEAPONS[self.weapon]['spread'], WEAPONS[self.weapon]['spread'])
             Bullet(self.game, position, direction.rotate(spread))
             self.total_bullets += 1
-            # self.total_accuracy = round((self.accurate_shot / self.total_bullets) * 100, 2)
             self._run_weapon_sound()
 
     def _run_weapon_sound(self):

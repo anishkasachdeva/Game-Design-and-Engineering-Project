@@ -143,7 +143,6 @@ ITEM_IMAGES = {
     'mini_health': 'first_aid1.png',
     'water': 'genericItem_color_118.png',
     'beer': 'genericItem_color_119.png',
-    # 'coffee': 'genericItem_color_124.png',
     'id_card': 'genericItem_color_151.png',
     'key': 'genericItem_color_155.png',
     'money': 'genericItem_color_158.png',
@@ -208,18 +207,7 @@ SOUND_EFFECTS_EMPTY = {
     'out_of_ammo': '',
     'shotgun': ''
 }
-# PLAYER_PAIN_SOUNDS = [
-#     'pain1.wav',
-#     'pain2.wav',
-#     'pain3.wav',
-#     'pain4.wav',
-#     'pain5.wav',
-#     'pain6.wav'
-# ]
-# PLAYER_DEATH_SOUNDS = [
-#     'die1.wav',
-#     'die2.wav'
-# ]
+
 ZOMBIE_MOAN_SOUNDS = [
     'zombie-1.wav',
     'zombie-2.wav',

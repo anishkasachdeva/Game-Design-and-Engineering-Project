@@ -61,7 +61,6 @@ class Zombie(pg.sprite.Sprite):
         size = randint(70, 120)
         Smoke(self.game, self.rect.center, self.game.zombie_death_smoke, size)
         if global_variables.is_mute == False:
-        # if len(self.game.zombie_die_sounds) > 0 :
             choice(self.game.zombie_die_sounds).play()
         self.kill()
         self.game.map_img.blit(choice(self.game.splats), self.position - vector(32, 32))
@@ -81,7 +80,6 @@ class Zombie(pg.sprite.Sprite):
     def _update_zombie_moan_sounds(self):
         if random() < 0.002:
             if global_variables.is_mute == False:
-            # if len(self.game.zombie_moan_sounds) > 0 :
                 choice(self.game.zombie_moan_sounds).play()
 
     def _update_damage(self):
@@ -97,10 +95,8 @@ class Zombie(pg.sprite.Sprite):
             self.image = pg.transform.rotate(self.game.zombie_img, self.rotation)
         else:
             self.image = pg.transform.rotate(self.game.zombie_img2, self.rotation)
-        # self.image = pg.transform.rotate(ZOMBIE_IMAGE2, self.rotation)
 
     def _update_position(self):
-        # pass
         self.rect = self.image.get_rect()
         self.rect.center = self.position
         self.acc = vector(1, 0).rotate(-self.rotation)

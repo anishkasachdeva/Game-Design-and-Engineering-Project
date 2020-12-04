@@ -1,6 +1,5 @@
 from zombie_game.settings import *
 
-
 class Board:
 
     def __init__(self, width: int, height: int):
@@ -65,7 +64,6 @@ class Board:
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
         self.draw_text(self.surface, "Leaderboard:", self.width / 2, self.height * 0.2, self.difficulty_font)
-        # self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.35, self.options_font)
         pos = 0.35
         with open(SCOREBOARD) as f:
             for line in f:
@@ -78,7 +76,6 @@ class Board:
             drawable.draw_on(self.surface)
         pg.display.update()
 
-#-----------------------------------------------------------------------------------------------------------------------------------------
 
     def draw_game_controls(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
@@ -113,16 +110,13 @@ class Board:
         self.draw_text(self.surface, "the fuel. To achieve this, he needs to kill the spirits in his way because they will" , self.width/2, self.height * 0.45, self.about_font)
         self.draw_text(self.surface, "get attracted by the sailor and will lower his health. The player needs to help the" , self.width/2, self.height * 0.50, self.about_font)
         self.draw_text(self.surface, "sailor find the keys to the main door and collect the fuel to reach back his home." , self.width/2, self.height * 0.55, self.about_font)
-        # self.draw_text(self.surface, "killing all the spirits." , self.width/2, self.height * 0.60, self.about_font)
 
 
-        #The ship got cursed, and our sailor stuck in an island populated with spirits. To return to his home, the sailorwants ship fuel. In search of ship fuel, he enters a haunted laboratory filled with spirits and searches for the fuel.  All the rooms are locked, so he needs to collect keys scattered all over the place and finally find the key to the main room having the fuel. To achieve this, he needs to kill all the spirits in his way because they will get attracted by the sailor and lower his health. The player needs to help the sailor find the key to the main door and collect the fuel, killing all the spirits.
         self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)
         pg.display.update()
         pass
-#-----------------------------------------------------------------------------------------------------------------------------------------
     def draw_game_over(self, scoreboard: list, message: str, *args):
         background = (0, 0, 0)
         self.surface.fill(background)
@@ -144,7 +138,6 @@ class Board:
         self.draw_text(self.surface, "Easy", self.width / 2, self.height * 0.2, self.difficulty_font)
         self.draw_text(self.surface, "Hard", self.width / 2, self.height * 0.4, self.difficulty_font)
         self.draw_text(self.surface, "Return", self.width / 2, self.height * 0.6, self.difficulty_font)
-        # self.draw_text(self.surface, "Zombie hell!", self.width / 2, self.height * 0.8, self.difficulty_font)
         for drawable in args:
             drawable.draw_on(self.surface)
 
