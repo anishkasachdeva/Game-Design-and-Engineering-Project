@@ -141,11 +141,7 @@ ITEM_SIZE = 40
 ITEM_IMAGES = {
     'health': 'first_aid1.png',
     'mini_health': 'first_aid1.png',
-    'water': 'genericItem_color_118.png',
-    'beer': 'genericItem_color_119.png',
-    'id_card': 'genericItem_color_151.png',
     'key': 'genericItem_color_155.png',
-    'money': 'genericItem_color_158.png',
     'ammo_small': 'bullets1.png',
     'ammo_big': 'bullets1.png',
     'pistol': 'pistol.png',
