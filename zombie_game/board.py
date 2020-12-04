@@ -39,7 +39,7 @@ class Board:
         self.draw_text(self.surface, "Rules:", self.width / 2, self.height * 0.1, self.difficulty_font)
         self.draw_text(self.surface, "1. Search for 3 keys in the whole map to open the door." , self.width/2, self.height * 0.25, self.about_font)
         self.draw_text(self.surface, "2. Collect coins to score more." , self.width/2-159, self.height * 0.30, self.about_font)
-        self.draw_text(self.surface, "3. Fight with the spirits." , self.width/2-203, self.height * 0.35, self.about_font)
+        self.draw_text(self.surface, "3. Fight with the spirits using the Space Bar." , self.width/2-80, self.height * 0.35, self.about_font)
         self.draw_text(self.surface, "4. Collect first-aid boxes to restore your energy." , self.width/2-50, self.height * 0.40, self.about_font)
         self.draw_text(self.surface, "5. Collect speedups to double your speed for 15 seconds." , self.width/2, self.height * 0.45, self.about_font)
         self.draw_text(self.surface, "6. Searching the fuel bottle is the end task." , self.width/2-80, self.height * 0.50, self.about_font)
@@ -83,8 +83,8 @@ class Board:
     def draw_game_controls(self, *args):
         self.intro_bg = pg.transform.scale(self.intro_bg, (self.width, self.height))
         self.surface.blit(self.intro_bg, (0, 0), (0, 0, self.width, self.height))
-        self.draw_text(self.surface, "Arrows", self.width / 2, self.height * 0.6, self.menu_font)
-        self.draw_text(self.surface, "Alphabets", self.width / 2, self.height * 0.7, self.menu_font)
+        self.draw_text(self.surface, "Arrow Keys", self.width / 2, self.height * 0.6, self.menu_font)
+        self.draw_text(self.surface, "W-A-S-D Keys", self.width / 2, self.height * 0.7, self.menu_font)
         self.draw_text(self.surface, "Quit", self.width / 2, self.height * 0.8, self.menu_font)
         for drawable in args:
             drawable.draw_on(self.surface)

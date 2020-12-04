@@ -540,7 +540,7 @@ class Game:
 
 if __name__ == "__main__":
     global_variables.game_music.init() 
-    global_variables.game_music.music.load("scary1_halloween.wav") 
+    global_variables.game_music.music.load("sounds/scary1_halloween.wav") 
     global_variables.game_music.music.set_volume(0.4)   
     global_variables.game_music.music.play(-1) 
     while True:
