@@ -25,7 +25,7 @@ The game is a solely keyboad based game. Following keys needs to be used:
 
 ## How to run the Game
 Create virtualenv and install all requirements and run command:
-`python3 main.py`
+`python3 run.py`
 
 <!-- ## Screenshots -->
 <!-- ![Alt text](images/readme/screenshot1.png) -->
