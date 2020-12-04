@@ -1,6 +1,6 @@
 import pygame as pg
 
-from zombie_game.functions import vector
+from spirit_game.functions import vector
 
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
@@ -9,7 +9,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 
-SCOREBOARD = './zombie_game/scoreboard.txt'
+SCOREBOARD = './spirit_game/scoreboard.txt'
 FPS = 80
 SCREEN_WIDTH = 1150
 SCREEN_HEIGHT = 700
@@ -40,17 +40,17 @@ PLAYER_IMAGE_UZI = 'gun.png'
 PLAYER_HIT_RECT = pg.Rect(0, 0, 35, 35)
 LIVES_IMG = 'life_heart.png'
 
-ZOMBIE_WIDTH = 23
-ZOMBIE_HEIGHT = 28
-ZOMBIE_SHIELD = 100
-ZOMBIE_SPEEDS = [70, 90, 110, 130, 150]
-ZOMBIE_IMAGE = 'spirit4.png'
-ZOMBIE_IMAGE2 = 'spirit5.png'
-ZOMBIE_HIT_RECT = pg.Rect(0, 0, 30, 30)
-ZOMBIE_DMG = 5
-ZOMBIE_NORMAL_RATIO = 1.2
-ZOMBIE_HARD_RATIO = 1.5
-ZOMBIE_HELL_RATIO = 2
+spirit_WIDTH = 23
+spirit_HEIGHT = 28
+spirit_SHIELD = 100
+spirit_SPEEDS = [70, 90, 110, 130, 150]
+spirit_IMAGE = 'spirit4.png'
+spirit_IMAGE2 = 'spirit5.png'
+spirit_HIT_RECT = pg.Rect(0, 0, 30, 30)
+spirit_DMG = 5
+spirit_NORMAL_RATIO = 1.2
+spirit_HARD_RATIO = 1.5
+spirit_HELL_RATIO = 2
 DETECT_RADIUS = 400
 AVOID_RADIUS = 80
 KICKBACK = 10
@@ -129,7 +129,7 @@ DIFFICULT_SPRITE_POS_X = 0.25
 ITEM_LAYER = 1
 SPLAT_LAYER = 1
 PLAYER_LAYER = 2
-ZOMBIE_LAYER = 2
+spirit_LAYER = 2
 BULLET_LAYER = 3
 SMOKE_LAYER = 5
 
@@ -208,14 +208,14 @@ SOUND_EFFECTS_EMPTY = {
     'shotgun': ''
 }
 
-ZOMBIE_MOAN_SOUNDS = [
-    'zombie-1.wav',
-    'zombie-2.wav',
-    'zombie-3.wav',
-    'zombie-4.wav',
-    'zombie-5.wav'
+spirit_MOAN_SOUNDS = [
+    'spirit-1.wav',
+    'spirit-2.wav',
+    'spirit-3.wav',
+    'spirit-4.wav',
+    'spirit-5.wav'
 ]
-ZOMBIE_PAIN_SOUNDS = [
+spirit_PAIN_SOUNDS = [
     'monster-2.wav',
     'monster-3.wav',
     'monster-4.wav',
@@ -223,13 +223,13 @@ ZOMBIE_PAIN_SOUNDS = [
     'monster-6.wav',
     'monster-7.wav',
 ]
-ZOMBIE_DIE_SOUNDS = [
-    'zombie_die.wav'
+spirit_DIE_SOUNDS = [
+    'spirit_die.wav'
 ]
 
-ZOMBIE_MOAN_SOUNDS_EMPTY = []
-ZOMBIE_PAIN_SOUNDS_EMPTY = []
-ZOMBIE_DIE_SOUNDS_EMPTY = []
+spirit_MOAN_SOUNDS_EMPTY = []
+spirit_PAIN_SOUNDS_EMPTY = []
+spirit_DIE_SOUNDS_EMPTY = []
 
 WEAPON_SOUNDS = {
     'pistol': [

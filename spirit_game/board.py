@@ -1,4 +1,4 @@
-from zombie_game.settings import *
+from spirit_game.settings import *
 
 class Board:
 
@@ -156,8 +156,8 @@ class Board:
         self.draw_text(self.surface, "Paused", self.width / 2, self.height / 3, self.title_font)
         self.draw_text(self.surface, "Press 'm' to Mute or Unmute", self.width / 2, self.height / 2, self.mute_font)
 
-    def draw_zombies_left(self, left: int):
-        self.draw_text(self.surface, "Zombies: {}".format(left), self.width - 150, 25, self.bonus_font)
+    def draw_spirits_left(self, left: int):
+        self.draw_text(self.surface, "spirits: {}".format(left), self.width - 150, 25, self.bonus_font)
 
     def draw_bonus(self, bonus: str):
         self.draw_text(self.surface, bonus, self.width - 300, 25, self.bonus_font)

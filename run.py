@@ -2,15 +2,15 @@ from os import path
 from random import choice, random
 import pygame as pg
 import time
-from zombie_game.board import Board
-from zombie_game.functions import quit_game, collide_hit_rect, draw_player_health, get_hit
-from zombie_game.item import Item
-from zombie_game.menu import Menu
-from zombie_game.player import Player
-from zombie_game.screen import Camera, TiledMap
-from zombie_game.settings import *
-from zombie_game.walls import Obstacle
-from zombie_game.zombie import Zombie
+from spirit_game.board import Board
+from spirit_game.functions import quit_game, collide_hit_rect, draw_player_health, get_hit
+from spirit_game.item import Item
+from spirit_game.menu import Menu
+from spirit_game.player import Player
+from spirit_game.screen import Camera, TiledMap
+from spirit_game.settings import *
+from spirit_game.walls import Obstacle
+from spirit_game.spirit import spirit
 import global_variables
 
 class Game:
@@ -24,7 +24,7 @@ class Game:
         self.all_sprites = pg.sprite.LayeredUpdates()
         self.walls = pg.sprite.Group()
         self.coins = 0
-        self.zombies = pg.sprite.Group()
+        self.spirits = pg.sprite.Group()
         self.bullets = pg.sprite.Group()
         self.items = pg.sprite.Group()
         self.locked_rooms = pg.sprite.Group()
@@ -35,8 +35,8 @@ class Game:
         self.map_img = None
         self.map_rect = None
         self.intro_img = None
-        self.zombie_img = None
-        self.zombie_img2 = None
+        self.spirit_img = None
+        self.spirit_img2 = None
         self.bullet_images = {}
         self.player_img = None
         self.player = None
@@ -48,14 +48,14 @@ class Game:
         self.light_mask = None
         self.splats = []
         self.gun_smoke = []
-        self.zombie_death_smoke = []
+        self.spirit_death_smoke = []
         self.items_images = {}
         self.sound_effects = {}
         self.weapon_sounds = {}
-        self.zombie_speeds = ZOMBIE_SPEEDS
-        self.zombie_moan_sounds = []
-        self.zombie_pain_sounds = []
-        self.zombie_die_sounds = []
+        self.spirit_speeds = spirit_SPEEDS
+        self.spirit_moan_sounds = []
+        self.spirit_pain_sounds = []
+        self.spirit_die_sounds = []
         self.locked_door_sound = None
         self.dim_screen = pg.Surface(self.board.surface.get_size())
         self.lives_img = None
@@ -84,8 +84,8 @@ class Game:
         self.dim_screen.fill((0, 0, 0))
         self.load_scoreboard(SCOREBOARD)
         self.player_img = pg.image.load(path.join(self.img_folder, self.character_type + PLAYER_IMAGE_NAKED))
-        self.zombie_img = pg.image.load(path.join(self.img_folder, ZOMBIE_IMAGE))
-        self.zombie_img2 = pg.image.load(path.join(self.img_folder, ZOMBIE_IMAGE2))
+        self.spirit_img = pg.image.load(path.join(self.img_folder, spirit_IMAGE))
+        self.spirit_img2 = pg.image.load(path.join(self.img_folder, spirit_IMAGE2))
         self.load_bullets()
         self.lives_img = pg.image.load(path.join(self.img_folder, LIVES_IMG))
         self.lives_img = pg.transform.scale(self.lives_img, (20, 20))
@@ -103,7 +103,7 @@ class Game:
 
     def load_green_smoke(self):
         for smoke in GREEN_SMOKE:
-            self.zombie_death_smoke.append(
+            self.spirit_death_smoke.append(
                 pg.image.load(path.join(self.game_folder, 'images/smokes/Green smoke/{}'.format(smoke))))
 
     def load_light_mask(self):
@@ -117,9 +117,9 @@ class Game:
             self.weapon_sounds[weapon] = []
             self._add_sounds(WEAPON_SOUNDS[weapon], self.weapon_sounds[weapon], 0.3)
 
-        self._add_sounds(ZOMBIE_MOAN_SOUNDS, self.zombie_moan_sounds, 0.4)
-        self._add_sounds(ZOMBIE_PAIN_SOUNDS, self.zombie_pain_sounds, 0.5)
-        self._add_sounds(ZOMBIE_DIE_SOUNDS, self.zombie_die_sounds, 0.8)
+        self._add_sounds(spirit_MOAN_SOUNDS, self.spirit_moan_sounds, 0.4)
+        self._add_sounds(spirit_PAIN_SOUNDS, self.spirit_pain_sounds, 0.5)
+        self._add_sounds(spirit_DIE_SOUNDS, self.spirit_die_sounds, 0.8)
         
         if global_variables.is_mute == True:
             global_variables.game_music.music.pause()
@@ -175,17 +175,17 @@ class Game:
 
     def set_params_to_difficult(self, difficult):
         if difficult == "easy":
-            self.zombie_speeds = ZOMBIE_SPEEDS
-            self.damage = ZOMBIE_DMG
+            self.spirit_speeds = spirit_SPEEDS
+            self.damage = spirit_DMG
         elif difficult == "normal":
-            self.zombie_speeds = [i * ZOMBIE_NORMAL_RATIO for i in ZOMBIE_SPEEDS]
-            self.damage = ZOMBIE_DMG * ZOMBIE_NORMAL_RATIO
+            self.spirit_speeds = [i * spirit_NORMAL_RATIO for i in spirit_SPEEDS]
+            self.damage = spirit_DMG * spirit_NORMAL_RATIO
         elif difficult == "hard":
-            self.zombie_speeds = [i * ZOMBIE_HARD_RATIO for i in ZOMBIE_SPEEDS]
-            self.damage = ZOMBIE_DMG * ZOMBIE_HARD_RATIO
+            self.spirit_speeds = [i * spirit_HARD_RATIO for i in spirit_SPEEDS]
+            self.damage = spirit_DMG * spirit_HARD_RATIO
         else:
-            self.zombie_speeds = [i * ZOMBIE_HELL_RATIO for i in ZOMBIE_SPEEDS]
-            self.damage = ZOMBIE_DMG * ZOMBIE_HELL_RATIO
+            self.spirit_speeds = [i * spirit_HELL_RATIO for i in spirit_SPEEDS]
+            self.damage = spirit_DMG * spirit_HELL_RATIO
 
     def update(self):
         self.all_sprites.update()
@@ -193,8 +193,8 @@ class Game:
         self.update_mini_map()
         self._collide_player_with_items()
         self._collide_player_with_bonus()
-        self._collide_player_with_zombie()
-        self._collide_bullet_with_zombie()
+        self._collide_player_with_spirit()
+        self._collide_bullet_with_spirit()
         self._collide_bullet_with_door()
         if self.player.has_id == 3:
             self._destroy_locked_door()
@@ -219,8 +219,8 @@ class Game:
                 for i in self.bonus_items:
                     i.kill()
 
-    def _collide_player_with_zombie(self):
-        hits = pg.sprite.spritecollide(self.player, self.zombies, False, collide_hit_rect)
+    def _collide_player_with_spirit(self):
+        hits = pg.sprite.spritecollide(self.player, self.spirits, False, collide_hit_rect)
         for hit in hits:
             self.player.shield -= self.damage
             hit.vel = vector(0, 0)
@@ -239,8 +239,8 @@ class Game:
             get_hit(self.player)
             self.player.position += vector(KICKBACK, 0).rotate(-hits[0].rotation)
 
-    def _collide_bullet_with_zombie(self):
-        hits = pg.sprite.groupcollide(self.zombies, self.bullets, False, True)
+    def _collide_bullet_with_spirit(self):
+        hits = pg.sprite.groupcollide(self.spirits, self.bullets, False, True)
         for hit in hits:
             hit.shield -= WEAPONS[self.player.weapon]['damage'] * len(hits[hit])
             self.player.accurate_shot += len(hits[hit])
@@ -248,7 +248,7 @@ class Game:
             get_hit(hit)
             if random() < 0.7:
                 if global_variables.is_mute == False:
-                    choice(self.zombie_pain_sounds).play()
+                    choice(self.spirit_pain_sounds).play()
 
     def _destroy_locked_door(self):
         for i in self.locked_room_card:
@@ -391,8 +391,8 @@ class Game:
                 door = Obstacle(self, tile_object.x, tile_object.y, tile_object.width, tile_object.height)
                 self.locked_rooms.add(door)
                 self.locked_room_card.append(door)
-            if tile_object.name == 'zombie':
-                Zombie(self, object_center.x, object_center.y)
+            if tile_object.name == 'spirit':
+                spirit(self, object_center.x, object_center.y)
             if tile_object.name in ITEM_IMAGES.keys():
                 if tile_object.name == 'beer' or tile_object.name == 'water' or tile_object.name == 'coffee':
                     bonus = Item(self, object_center, tile_object.name)
@@ -406,7 +406,7 @@ class Game:
         if self.night:
             self.render_fog()
         draw_player_health(self.board.surface, 20, 10, self.player.shield / PLAYER_SHIELD)
-        self.board.draw_zombies_left(len(self.zombies))
+        self.board.draw_spirits_left(len(self.spirits))
         self.board.draw_coins_collected(self.player.total_accuracy)
         self.board.draw_adds(self.board.surface, 150, 10, self.lives_img, self.player.lives)
         self.board.draw_adds(self.board.surface, self.width-340, self.height-160, self.mini_map)
@@ -456,11 +456,11 @@ class Game:
         if timer_stop - timer_start > 90:
             self.bonus = False
             self.player.speed = PLAYER_SPEED
-            self.damage = ZOMBIE_DMG
+            self.damage = spirit_DMG
 
     def _draw_all_shields(self):
         for sprite in self.all_sprites:
-            if isinstance(sprite, Zombie):
+            if isinstance(sprite, spirit):
                 sprite.draw_shield()
             self.board.surface.blit(sprite.image, self.camera.apply(sprite))
 

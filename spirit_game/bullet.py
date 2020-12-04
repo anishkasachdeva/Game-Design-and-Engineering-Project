@@ -1,6 +1,6 @@
 from random import uniform
 
-from zombie_game.settings import *
+from spirit_game.settings import *
 
 
 class Bullet(pg.sprite.Sprite):

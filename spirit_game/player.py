@@ -2,10 +2,10 @@ from os import path
 from random import randint, choice, uniform
 
 import time
-from zombie_game.bullet import Bullet
-from zombie_game.functions import collide_with_object
-from zombie_game.settings import *
-from zombie_game.smoke import Smoke
+from spirit_game.bullet import Bullet
+from spirit_game.functions import collide_with_object
+from spirit_game.settings import *
+from spirit_game.smoke import Smoke
 import global_variables
 
 class Player(pg.sprite.Sprite):

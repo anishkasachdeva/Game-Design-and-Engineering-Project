@@ -1,34 +1,34 @@
 import time
 from random import randint, choice, random
 
-from zombie_game.functions import collide_with_object
-from zombie_game.settings import *
-from zombie_game.smoke import Smoke
+from spirit_game.functions import collide_with_object
+from spirit_game.settings import *
+from spirit_game.smoke import Smoke
 
 import global_variables
 
 
-class Zombie(pg.sprite.Sprite):
+class spirit(pg.sprite.Sprite):
 
     def __init__(self, game, x, y):
-        self._layer = ZOMBIE_LAYER
-        self.groups = game.all_sprites, game.zombies
+        self._layer = spirit_LAYER
+        self.groups = game.all_sprites, game.spirits
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image = game.zombie_img.copy()
-        self.image2 = game.zombie_img2.copy()
+        self.image = game.spirit_img.copy()
+        self.image2 = game.spirit_img2.copy()
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.position = vector(x, y)
         self.rect.center = self.position
-        self.hit_rect = ZOMBIE_HIT_RECT.copy()
+        self.hit_rect = spirit_HIT_RECT.copy()
         self.hit_rect.center = self.rect.center
         self.vel = vector(0, 0)
         self.acc = vector(0, 0)
         self.rotation = 0
-        self.shield = ZOMBIE_SHIELD
+        self.shield = spirit_SHIELD
         self.shield_bar = None
-        self.speed = choice(game.zombie_speeds)
+        self.speed = choice(game.spirit_speeds)
         self.target = game.player
         self.damaged = False
         self.damage_alpha = None
@@ -40,15 +40,15 @@ class Zombie(pg.sprite.Sprite):
             color = YELLOW
         else:
             color = RED
-        width = int(self.rect.width * self.shield / ZOMBIE_SHIELD)
+        width = int(self.rect.width * self.shield / spirit_SHIELD)
         self.shield_bar = pg.Rect(0, 0, width, 7)
-        if self.shield < ZOMBIE_SHIELD:
+        if self.shield < spirit_SHIELD:
             pg.draw.rect(self.image, color, self.shield_bar)
 
     def update(self):
         target_distance = self.target.position - self.position
         if target_distance.length_squared() < DETECT_RADIUS ** 2:
-            self._update_zombie_moan_sounds()
+            self._update_spirit_moan_sounds()
             self._update_image()
             self._update_damage()
             self._update_position()
@@ -59,28 +59,28 @@ class Zombie(pg.sprite.Sprite):
     def die(self):
         self.game.player.total_accuracy += 10
         size = randint(70, 120)
-        Smoke(self.game, self.rect.center, self.game.zombie_death_smoke, size)
+        Smoke(self.game, self.rect.center, self.game.spirit_death_smoke, size)
         if global_variables.is_mute == False:
-            choice(self.game.zombie_die_sounds).play()
+            choice(self.game.spirit_die_sounds).play()
         self.kill()
         self.game.map_img.blit(choice(self.game.splats), self.position - vector(32, 32))
 
     def _update_collisisions(self):
-        self._avoid_other_zombies()
+        self._avoid_other_spirits()
         collide_with_object(self, self.game.walls, 'x')
         collide_with_object(self, self.game.walls, 'y')
 
-    def _avoid_other_zombies(self):
-        for zombie in self.game.zombies:
-            if zombie != self:
-                distance = self.position - zombie.position
+    def _avoid_other_spirits(self):
+        for spirit in self.game.spirits:
+            if spirit != self:
+                distance = self.position - spirit.position
                 if 0 < distance.length() < AVOID_RADIUS:
                     self.acc += distance.normalize()
 
-    def _update_zombie_moan_sounds(self):
+    def _update_spirit_moan_sounds(self):
         if random() < 0.002:
             if global_variables.is_mute == False:
-                choice(self.game.zombie_moan_sounds).play()
+                choice(self.game.spirit_moan_sounds).play()
 
     def _update_damage(self):
         if self.damaged:
@@ -92,9 +92,9 @@ class Zombie(pg.sprite.Sprite):
     def _update_image(self):
         self.rotation = (self.game.player.position - self.position).angle_to(vector(1, 0))
         if int(round(time.time()))%2==0:
-            self.image = pg.transform.rotate(self.game.zombie_img, self.rotation)
+            self.image = pg.transform.rotate(self.game.spirit_img, self.rotation)
         else:
-            self.image = pg.transform.rotate(self.game.zombie_img2, self.rotation)
+            self.image = pg.transform.rotate(self.game.spirit_img2, self.rotation)
 
     def _update_position(self):
         self.rect = self.image.get_rect()

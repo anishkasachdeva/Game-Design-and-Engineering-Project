@@ -1,8 +1,8 @@
 from os import path
 
-from zombie_game.drawable import Drawable
-from zombie_game.functions import quit_game
-from zombie_game.settings import *
+from spirit_game.drawable import Drawable
+from spirit_game.functions import quit_game
+from spirit_game.settings import *
 # from ..run import Game
 
 import global_variables
