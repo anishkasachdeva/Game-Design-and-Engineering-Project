@@ -499,7 +499,7 @@ class Game:
 
     def render_fog(self):
         if int(round(time.time()))%5==0:
-            NIGHT_COLOR = (25,25,25)
+            NIGHT_COLOR = (30,30,30)
         else:
             NIGHT_COLOR = (8,8,8)
         self.fog.fill(NIGHT_COLOR)
