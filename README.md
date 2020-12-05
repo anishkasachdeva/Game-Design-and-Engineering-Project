@@ -30,9 +30,10 @@ Follow the given steps :
 3. Run: `python3 run.py` in your shell.
 
 ## Screenshots
-Game Menu Screen : [/br]
+#### Game Menu Screen :
 ![Alt text](images/Readme/Menu_Screen.jpeg)
 
 
-Game Play Screen : [/br]
+
+#### Game Play Screen : 
 ![Alt text](images/Readme/GamePlay_Screen.jpeg)
