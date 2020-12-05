@@ -33,7 +33,11 @@ Follow the given steps :
 #### Game Menu Screen :
 ![Alt text](images/Readme/Menu_Screen.jpeg)
 
+#### About the Game Screen :
+![Alt text](images/Readme/Game_About.jpeg)
 
+#### Game Rules Screen :
+![Alt text](images/Readme/Game_Rules.jpeg)
 
 #### Game Play Screen : 
 ![Alt text](images/Readme/GamePlay_Screen.jpeg)
