@@ -358,7 +358,7 @@ class Game:
                         self.night = not self.night
 
     def new(self):
-        self.map = TiledMap(path.join(self.map_folder, 'clab_map.tmx'))
+        self.map = TiledMap(path.join(self.map_folder, 'main_map.tmx'))
         self.map_img = self.map.make_map()
         self.map_rect = self.map_img.get_rect()
         for tile_object in self.map.tmxdata.objects:

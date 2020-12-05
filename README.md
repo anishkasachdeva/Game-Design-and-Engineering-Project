@@ -28,7 +28,11 @@ Follow the given steps :
 1. Create a virtualenv.
 2. Run: `pip install -r requirements.txt` in your shell.
 3. Run: `python3 run.py` in your shell.
-<!-- ## Screenshots -->
-<!-- ![Alt text](images/readme/screenshot1.png) -->
 
-<!-- ![Alt text](images/readme/screenshot2.png) -->
+## Screenshots
+Game Menu Screen : [/br]
+![Alt text](images/Readme/Menu_Screen.jpeg)
+
+
+Game Play Screen : [/br]
+![Alt text](images/Readme/GamePlay_Screen.jpeg)
