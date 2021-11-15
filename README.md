@@ -40,4 +40,5 @@ Follow the given steps :
 ![Alt text](images/Readme/Game_Rules.jpeg)
 
 #### Game Play Screen : 
-![Alt text](images/Readme/GamePlay_Screen.jpeg)
+![Alt text](images/Readme/GamePlay_Screen.jpeg)# The-Curse-of-Aegis
+# The-Curse-of-Aegis
